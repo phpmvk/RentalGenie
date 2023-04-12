@@ -1,0 +1,7 @@
+<p>chat-input works!</p>
+<div>
+  <form [formGroup]="messageForm" (ngSubmit)="handleSubmit()">
+    <input type="text" formControlName="content" placeholder="Type your message here ...">
+    <button [disabled]="!messageForm.valid">Send</button>
+  </form>
+</div>
