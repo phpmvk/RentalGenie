@@ -1,3 +1,9 @@
-<div class="b-red">
-  <div *ngFor="let message of messages">{{message.content}}</div>
+<div class="chat-screen" #scrollScreen>
+  <div *ngFor="let message of messages" 
+     class="message" 
+     #message
+     [ngClass]="{'from-user': message.isFromUser, 'from-bot': !message.isFromUser}">
+  {{message.content}}
+</div>
+
 </div>

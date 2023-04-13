@@ -8,8 +8,8 @@ import { Message } from 'src/app/types';
   styleUrls: ['./chat-box.component.css']
 })
 export class ChatBoxComponent {
-
   messages: Message[] = []
+  showChat = false;
 
   constructor(
     private api: ApiClientService
@@ -27,6 +27,10 @@ export class ChatBoxComponent {
       console.log('This is the message received', response)
       this.messages.push(response)
     })
+  }
+
+  toggleChat(){
+    this.showChat = !this.showChat
   }
 
 }

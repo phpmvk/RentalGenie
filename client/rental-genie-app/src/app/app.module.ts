@@ -12,6 +12,7 @@ import { LoginComponent } from './agent_view/login/login.component';
 import { ListItemListingComponent } from './client_view/Listings/list-item-listing/list-item-listing.component';
 import { IndividualListingComponent } from './client_view/Listings/individual-listing/individual-listing.component';
 import { NavbarComponent } from './client_view/navbar/navbar.component';
+import { ChatToggleComponent } from './client_view/Chat/chat-toggle/chat-toggle.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NavbarComponent } from './client_view/navbar/navbar.component';
     ListItemListingComponent,
     IndividualListingComponent,
     NavbarComponent,
+    ChatToggleComponent,
   ],
   imports: [
     BrowserModule,

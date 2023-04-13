@@ -1,4 +1,18 @@
-<div class="b-red">
-  <app-chat-screen class="b-red" [messages]="messages"></app-chat-screen>
-  <app-chat-input class="b-red" (messageSend)="chatMessageSend($event)" ></app-chat-input>
+<div class="test">
+  <div class="chat-box b-red" *ngIf="showChat">
+    
+    <div class="chat-header">
+      RentalGenie Chat
+    </div>
+    <div class="chat-screen">
+      <app-chat-screen [messages]="messages"></app-chat-screen>
+    </div>
+    <div class="chat-input">
+      <app-chat-input (messageSend)="chatMessageSend($event)" ></app-chat-input>
+    </div>
+    
+  </div>
+  <div class="chat-toggle">
+    <app-chat-toggle (toggleChatBox)="toggleChat()"></app-chat-toggle>
+  </div>
 </div>
