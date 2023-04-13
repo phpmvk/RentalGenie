@@ -7,7 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChatBoxComponent } from './Chat/chat-box/chat-box.component';
 import { ChatInputComponent } from './Chat/chat-input/chat-input.component';
 import { ChatScreenComponent } from './Chat/chat-screen/chat-screen.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http'
     ChatBoxComponent,
     ChatInputComponent,
     ChatScreenComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
