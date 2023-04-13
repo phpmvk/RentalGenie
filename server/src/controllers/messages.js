@@ -1,4 +1,4 @@
-const openai = require('./openai')
+const openai = require('../services/openai')
 
 const db = {
   messages: []

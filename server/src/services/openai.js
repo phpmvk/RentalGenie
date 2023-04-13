@@ -1,5 +1,5 @@
-const { Configuration, OpenAIApi } = require('openai');
-const listing = require('../../models/listing')
+const { Configuration, OpenAIApi } = require('openai')
+const listing = require('../models/listing')
 
 const config = new Configuration({
   apiKey: process.env.OPENAI_API_KEY

@@ -1,7 +1,7 @@
 const Router = require('express')
 const router = Router();
 
-const chatController = require('./controllers/chat/messages')
+const chatController = require('../controllers/messages')
 
 router.post("/userMessage", chatController.addUserMessage)
 
