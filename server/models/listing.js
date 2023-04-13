@@ -8,12 +8,7 @@ module.exports = {
   "bedrooms": 2,
   "bathrooms": 1,
   "floor": 2,
-  "pets_allowed": "Dogs and cats allowed with additional deposit",
-  "smokers_allowed": false,
   "heating": "Central heating",
-  "tenant_min_income": 30000,
-  "tenant_gender": "None",
-  "tenant_min_age": 18,
   "thumbnail": "https://example.com/images/thumbnail1.jpg",
   "pictures": [
     "https://example.com/images/picture1.jpg",
@@ -23,6 +18,7 @@ module.exports = {
   "description": "Spacious 2-bedroom apartment in a great location",
   "rent": 1500,
   "showing_weekdays": ["Monday", "Wednesday", "Friday"],
-  "showing_hours": ["10:00 AM", "1:00 PM", "4:00 PM"],
-  "available": true
+  "showing_hours": ["10:00am - 12:00pm", "1:00pm - 3:00pm", "4:00pm - 04:30pm"],
+  "available": true,
+  "tenant_requirements": "minimum annual income $30000, no students, dogs and cats allowed with additional deposits, smokers not allowed, should be a girl"
 }
