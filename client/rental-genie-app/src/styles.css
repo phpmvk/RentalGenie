@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+.b-red {
+  border: 1px solid red
+}

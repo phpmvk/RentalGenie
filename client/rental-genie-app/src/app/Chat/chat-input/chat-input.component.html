@@ -1,5 +1,4 @@
-<p>chat-input works!</p>
-<div>
+<div class="b-red">
   <form [formGroup]="messageForm" (ngSubmit)="handleSubmit()">
     <input type="text" formControlName="content" placeholder="Type your message here ...">
     <button [disabled]="!messageForm.valid">Send</button>

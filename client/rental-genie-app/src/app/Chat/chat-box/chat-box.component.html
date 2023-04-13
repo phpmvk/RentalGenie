@@ -1,5 +1,4 @@
-<p>chat-box works!</p>
-<div>
-  <app-chat-screen [messages]="messages"></app-chat-screen>
-  <app-chat-input></app-chat-input>
+<div class="b-red">
+  <app-chat-screen class="b-red" [messages]="messages"></app-chat-screen>
+  <app-chat-input class="b-red" (messageSend)="chatMessageSend($event)" ></app-chat-input>
 </div>

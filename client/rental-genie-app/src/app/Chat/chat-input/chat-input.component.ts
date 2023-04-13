@@ -13,7 +13,8 @@ export class ChatInputComponent {
 
   formDefault = {
     content: new FormControl('', Validators.required),
-    timestamp: new FormControl('')
+    timestamp: new FormControl(''),
+    isFromUser: new FormControl(true)
   }
 
   messageForm: FormGroup = new FormGroup(this.formDefault)
@@ -26,6 +27,5 @@ export class ChatInputComponent {
       this.messageSend.emit(message)
     }
   }
-
 }
 
