@@ -4,11 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ChatBoxComponent } from './Chat/chat-box/chat-box.component';
-import { ChatInputComponent } from './Chat/chat-input/chat-input.component';
-import { ChatScreenComponent } from './Chat/chat-screen/chat-screen.component';
+import { ChatBoxComponent } from './client_view/Chat/chat-box/chat-box.component';
+import { ChatInputComponent } from './client_view/Chat/chat-input/chat-input.component';
+import { ChatScreenComponent } from './client_view/Chat/chat-screen/chat-screen.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './agent_view/login/login.component';
+import { ListItemListingComponent } from './client_view/Listings/list-item-listing/list-item-listing.component';
+import { IndividualListingComponent } from './client_view/Listings/individual-listing/individual-listing.component';
+import { NavbarComponent } from './client_view/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { LoginComponent } from './login/login.component';
     ChatBoxComponent,
     ChatInputComponent,
     ChatScreenComponent,
-    LoginComponent
+    LoginComponent,
+    ListItemListingComponent,
+    IndividualListingComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

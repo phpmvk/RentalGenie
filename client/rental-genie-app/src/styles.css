@@ -1,4 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+  font-family: arial;
+}
+
 .b-red {
   border: 1px solid red
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
