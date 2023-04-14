@@ -22,7 +22,7 @@ export class ChatInputComponent {
   handleSubmit(){
     if (this.messageForm.valid) {
       const message = this.messageForm.value;
-      this.messageForm.reset(this.formDefault.content)
+      this.messageForm.reset({content: '', timestamp: '', isFromUser: true})
       message.timestamp = Date.now();
       this.messageSend.emit(message)
     }

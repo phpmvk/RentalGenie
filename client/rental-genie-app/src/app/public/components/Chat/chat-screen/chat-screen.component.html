@@ -1,9 +1,8 @@
-<div class="chat-screen" #scrollScreen>
+<div #scrollScreen class="chat-screen">
   <div *ngFor="let message of messages" 
      class="message" 
      #message
      [ngClass]="{'from-user': message.isFromUser, 'from-bot': !message.isFromUser}">
-  {{message.content}}
-</div>
-
+    {{message.content}}
+  </div>
 </div>
