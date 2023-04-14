@@ -5,6 +5,7 @@ import { PrivateComponent } from './private.component';
 import { PrivateRoutingModule } from './private-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { AddListingComponent } from './pages/add-listing/add-listing.component';
+import { MylistingsComponent } from './pages/mylistings/mylistings.component';
 
 
 
@@ -13,7 +14,8 @@ import { AddListingComponent } from './pages/add-listing/add-listing.component';
     NavbarComponent,
     PrivateComponent,
     HomeComponent,
-    AddListingComponent
+    AddListingComponent,
+    MylistingsComponent
   ],
   imports: [
     CommonModule,
