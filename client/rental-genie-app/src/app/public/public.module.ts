@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PublicComponent } from './public.component';
 import { PublicRoutingModule } from './public-routing.module';
+import { ListingDetailComponent } from './pages/listing-detail/listing-detail.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { PublicRoutingModule } from './public-routing.module';
     ChatInputComponent,
     ChatScreenComponent,
     PublicComponent,
+    ListingDetailComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,

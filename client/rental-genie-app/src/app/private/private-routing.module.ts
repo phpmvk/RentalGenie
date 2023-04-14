@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { PrivateComponent } from './private.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AddListingComponent } from './pages/add-listing/add-listing.component';
 
-
+const routes: Routes = [
+  {
+    path: '',
+    component: PrivateComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'add-listing', component: AddListingComponent },
+    ]
+  }
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class PrivateRoutingModule { }
