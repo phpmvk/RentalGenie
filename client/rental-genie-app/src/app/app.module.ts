@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PublicModule } from './public/public.module';
 import { PrivateModule } from './private/private.module';
 import { AuthModule } from './auth/auth.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuthModule } from './auth/auth.module';
     ReactiveFormsModule,
     PublicModule,
     PrivateModule,
-    AuthModule
+    AuthModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

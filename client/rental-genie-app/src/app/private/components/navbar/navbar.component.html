@@ -4,15 +4,29 @@
       <i class="fa-solid fa-road-barrier"></i>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="fa-solid fa-house"></i>
-        <span class="link-text">Home</span>
+      <a routerLink="/private/home" class="nav-link">
+        <i class="fa-solid fa-envelopes-bulk"></i>
+        <span class="link-text">Dashboard</span>
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="fa-solid fa-gear"></i>
-        <span class="link-text">[Settings]</span>
+      <a routerLink="/private/mylistings" class="nav-link">
+        <i class="fa-solid fa-people-roof"></i>
+        <span class="link-text">My Listings</span>
+      </a>
+    </li>
+  
+    <li class="nav-item">
+      <a routerLink="/private/add-listing" class="nav-link">
+        <i class="fa-solid fa-plus"></i>
+        <span class="link-text">Add Listing</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <!-- don't forget to change the routerLink once logout works -->
+      <a routerLink="/private/home" class="nav-link"> 
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        <span class="link-text">[Logout]</span>
       </a>
     </li>
   </ul>

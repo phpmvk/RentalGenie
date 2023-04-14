@@ -3,7 +3,8 @@
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
   --bg-primary: #23232e;
-  --bg-secondary: #141418;
+  --bg-secondary: #fafbfc;
+  --bg-tertiary: #ffffff;
   --transition-speed: 600ms;
   font-family: arial;
 }
@@ -15,4 +16,5 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--bg-secondary);
 }
