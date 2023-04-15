@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-item-listing',
@@ -7,7 +8,16 @@ import { Component, Input } from '@angular/core';
 })
 export class ListItemListingComponent {
 
+  //remember to adjust types!
   @Input()
   listing: any
+
+  constructor(
+    private router: Router
+  ){}
+
+  onListItemListingComponentClick(listing: any){
+    this.router.navigate(['/public','listing-detail', { state: listing._id }])
+  }
 
 }

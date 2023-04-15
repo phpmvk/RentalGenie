@@ -1,7 +1,7 @@
-<div class="list-item-listing">
-  Agency: {{listing.agency_id}}
-  Address: {{listing.address}}
-  Post Code: {{listing.post_code}}
-  Tentat Requirements: {{listing.tenant_requirements}}
-  {{listing._id}}
+<div class="list-item-listing" (click)="onListItemListingComponentClick(listing)">
+  <span>Agency: {{listing.agency_id}}</span>
+  <span>Address: {{listing.address}}</span>
+  <span>Post Code: {{listing.post_code}}</span>
+  <span>Tenant Requirements: {{listing.tenant_requirements}}</span>
+  <span>{{listing._id}}</span>
 </div>
