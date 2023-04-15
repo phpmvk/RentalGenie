@@ -17,4 +17,9 @@ export class ApiClientService {
   chatMessageSend(msg: Message): Observable<string>{
     return this.http.post<string>(this.rootUrl + 'userMessage', msg, {  "headers": { "content-type": "application/json" }})
   }
+
+  // REMEMBER TO FIX TYPE FOR THIS:
+  postNewListing(listing: any): Observable<any>{
+    return this.http.post<any>(this.rootUrl + 'add-listing', listing, {  "headers": { "content-type": "application/json" }})
+  }
 }

@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AddListingComponent } from './pages/add-listing/add-listing.component';
 import { MylistingsComponent } from './pages/mylistings/mylistings.component';
 import { AddListingFormComponent } from './components/add-listing-form/add-listing-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { AddListingFormComponent } from './components/add-listing-form/add-listi
   imports: [
     CommonModule,
     PrivateRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     PrivateComponent

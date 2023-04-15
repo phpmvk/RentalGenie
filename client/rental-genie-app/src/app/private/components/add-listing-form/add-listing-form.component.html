@@ -1,4 +1,52 @@
-<form class="b-red" action="">
-  <label for="">Put in there:</label>
-  <input type="text">
+<form [formGroup]="addListingForm" (ngSubmit)="onSubmit()">
+  <label>AGENCY ID</label>
+  <input type="text" formControlName="agency_id">
+  
+  <label>Address:</label>
+  <input type="text" formControlName="address">
+
+  <label>Post Code:</label>
+  <input type="text" formControlName="post_code">
+
+  <label>Owner Name:</label>
+  <input type="text" formControlName="owner_name">
+
+  <label>Owner Contact:</label>
+  <input type="text" formControlName="owner_contact">
+
+  <label>Size:</label>
+  <input type="number" formControlName="size">
+
+  <label>Bedrooms:</label>
+  <input type="number" formControlName="bedrooms">
+
+  <label>Bathrooms:</label>
+  <input type="number" formControlName="bathrooms">
+
+  <label>Description:</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Rent Amount:</label>
+  <input type="number" formControlName="rent_amount">
+
+  <div class="availability-selector">
+    <label>Showing Weekdays:</label>
+    <div formGroupName="showing_weekdays">
+      <div *ngFor="let day of weekdays">
+        <label>{{ day }}</label>
+        <input type="checkbox" [formControlName]="day">
+      </div>
+    </div>
+    <label>Showing Hours:</label>
+    <input type="text" formControlName="showing_hours">
+  </div>
+
+
+  <label>Available:</label>
+  <input type="checkbox" formControlName="available">
+
+  <label>Tenant Requirements:</label>
+  <textarea formControlName="tenant_requirements"></textarea>
+
+  <button type="submit" [disabled]="!addListingForm.valid">Submit</button>
 </form>
