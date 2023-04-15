@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: PublicComponent, children: [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'listing-detail', component: ListingDetailComponent }
+    { path: 'listing-detail/:id', component: ListingDetailComponent }
   ]}
 ];
 

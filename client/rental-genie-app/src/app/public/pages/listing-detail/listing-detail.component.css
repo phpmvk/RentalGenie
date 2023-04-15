@@ -4,5 +4,6 @@
   background-color: rgb(229, 225, 225);
   border-radius: 10px;
   min-width: 80vw;
-  /* overflow-y: hidden; */
+  display: flex;
+  flex-direction: column;
 }

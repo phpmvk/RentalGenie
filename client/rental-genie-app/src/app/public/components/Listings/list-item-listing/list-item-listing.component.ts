@@ -17,7 +17,7 @@ export class ListItemListingComponent {
   ){}
 
   onListItemListingComponentClick(listing: any){
-    this.router.navigate(['/public','listing-detail', { state: listing._id }])
+    this.router.navigate(['/public/listing-detail',this.listing._id])
   }
 
 }
