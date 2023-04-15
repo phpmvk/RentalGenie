@@ -36,7 +36,7 @@ export class AddListingFormComponent {
         Friday: new FormControl(false),
       }),
       showing_hours: ['', Validators.required],
-      available: [false],
+      available: [true],
       tenant_requirements: ['', Validators.required],
     });
   }
@@ -45,5 +45,15 @@ export class AddListingFormComponent {
     const selectedDays = this.weekdays.filter(day => this.addListingForm.value.showing_weekdays[day]);
     this.addListingForm.patchValue({showing_weekdays: selectedDays});
     console.log(this.addListingForm.value);
+    const newListing = this.addListingForm.value
+    console.log(this.addListingForm.value.showing_weekdays);
+    const showingDays = this.addListingForm.value.showing_weekdays
+    const showingDaysArray = []
+    for (let day in showingDays) {
+      if (showingDays[day] === true) showingDaysArray.push(day)
+    }
+    newListing.showing_weekdays = showingDaysArray
+    console.log('Corrected Listing', newListing)
+    this.api.postNewListing(newListing).subscribe(res => console.log(res))
   }
 }

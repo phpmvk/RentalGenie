@@ -22,4 +22,13 @@ export class ApiClientService {
   postNewListing(listing: any): Observable<any>{
     return this.http.post<any>(this.rootUrl + 'add-listing', listing, {  "headers": { "content-type": "application/json" }})
   }
+
+  getAllListings(){
+    return this.http.get<any>(this.rootUrl + 'all-listings', { "headers": {"accept": "application/json" }})
+  }
+
+  getAllListingsById(id: any){
+    return this.http.get<any>(this.rootUrl + 'all-listings' + `/${id}`, { "headers": {"accept": "application/json" }})
+  }
+
 }
