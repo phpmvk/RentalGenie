@@ -10,10 +10,22 @@ export class ApiClientService {
 
   rootUrl = "http://localhost:3001/";
 
+  //add type!!
+  allListings: any = []
+
   constructor(
     private http: HttpClient
   ) {}
   
+  getAllListings(): Observable<any>{  
+    console.log('pooppooo')
+    return this.http.get<any>(this.rootUrl + 'all-listings', { "headers": {"accept": "application/json" }})
+  }
+  
+  getAllListingsById(id: any){
+    return this.http.get<any>(this.rootUrl + 'all-listings' + `/${id}`, { "headers": {"accept": "application/json" }})
+  }
+
   chatMessageSend(msg: Message): Observable<string>{
     return this.http.post<string>(this.rootUrl + 'userMessage', msg, {  "headers": { "content-type": "application/json" }})
   }
@@ -22,13 +34,4 @@ export class ApiClientService {
   postNewListing(listing: any): Observable<any>{
     return this.http.post<any>(this.rootUrl + 'add-listing', listing, {  "headers": { "content-type": "application/json" }})
   }
-
-  getAllListings(){
-    return this.http.get<any>(this.rootUrl + 'all-listings', { "headers": {"accept": "application/json" }})
-  }
-
-  getAllListingsById(id: any){
-    return this.http.get<any>(this.rootUrl + 'all-listings' + `/${id}`, { "headers": {"accept": "application/json" }})
-  }
-
 }

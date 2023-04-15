@@ -2,7 +2,7 @@
   <div *ngIf="allListings.length >0 else noListings">
     <app-list-item-listing *ngFor="let listing of allListings" [listing]="listing"></app-list-item-listing>
   </div>
-  <!-- not sure yet if this works: -->
+
   <ng-template #noListings>There are no listings to display ...</ng-template>
 </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClientService } from 'src/app/api-client.service';
+import { Store } from 'src/app/client-store';
 
 @Component({
   selector: 'app-home',
@@ -12,18 +13,24 @@ export class HomeComponent implements OnInit{
   allListings: any = []
 
   constructor(
-    private api: ApiClientService
+    private api: ApiClientService,
+    private store: Store,
   ){}
 
   ngOnInit(){
     this.getAll()
   }
-
-
+  
   getAll(){
-    this.api.getAllListings().subscribe(res => {
-      this.allListings = res;
-      //maybe add a sort by date added? Need to create that property on the data too
-    })
+    const storeListings = this.store.getListing()
+    if (storeListings.length > 0){
+      this.allListings = storeListings;
+    } else {
+      this.api.getAllListings().subscribe(res => {
+        this.store.setListings(res)
+        this.allListings = res;
+      })
+
+    }
   }
 }
