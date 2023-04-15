@@ -14,7 +14,8 @@ export class Store {
   }
 
   getListingById(id: string) {
-    return this.allListings.find(el => el._id = id)
+    const test = this.allListings.find(el => el._id === id);
+    return test
   }
 
   setListings(listings: []){

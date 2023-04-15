@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Store } from 'src/app/client-store';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,9 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './listing-detail.component.html',
   styleUrls: ['./listing-detail.component.css']
 })
-export class ListingDetailComponent {
+export class ListingDetailComponent implements OnInit {
 
-  listing_id = this.activatedRoute.snapshot.paramMap.get("id");
+  listing_id: any;
   listing: any;
 
 
@@ -20,7 +20,16 @@ export class ListingDetailComponent {
   ){}
 
   ngOnInit(){
+    this.getIdFromUrl()
     this.findListing(this.listing_id)
+  }
+  ngOnChanges(){
+    this.getIdFromUrl()
+    this.findListing(this.listing_id)
+  }  
+
+  getIdFromUrl(){
+    this.listing_id = this.activatedRoute.snapshot.paramMap.get("id");
   }
 
   findListing(id: any){
