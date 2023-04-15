@@ -5,8 +5,6 @@ const cors = require('cors')
 const router = require('./routes/router')
 const PORT = process.env.PORT || 3002
 
-console.log(process.env.PORT)
-
 app
   .use(cors())
   .use(express.json())
