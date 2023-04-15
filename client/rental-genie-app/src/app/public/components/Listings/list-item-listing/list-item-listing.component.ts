@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-item-listing',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-item-listing.component.css']
 })
 export class ListItemListingComponent {
+
+  @Input()
+  listing: any
 
 }
