@@ -21,7 +21,7 @@ export class ChatBoxComponent {
   chatMessageSend(msg: Message){
     console.log('This is the message sent', msg)
     this.messages.push(msg)
-    this.api.chatMessageSend(msg, this.listingId).subscribe(res => {
+    this.api.chatMessageSend(this.messages, this.listingId).subscribe(res => {
       const response: Message = {
         content: res,
         isFromUser: false,
@@ -30,10 +30,10 @@ export class ChatBoxComponent {
       console.log('This is the message received', response)
       this.messages.push(response)
     })
+    console.log(this.messages)
   }
 
   toggleChat(){
-    console.log('this is the listing ID tied to this chat: ', this.listingId)
     this.showChat = !this.showChat
   }
 

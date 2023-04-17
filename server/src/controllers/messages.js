@@ -12,10 +12,14 @@ async function addUserMessage(req, res) {
     // console.log('this is the req.query.listingID',listing_id)
     const listingInfo = await listingsModel.getPrivateListingByListingId(listing_id)
     // console.log('this is the listing info: ', listingInfo)
-    const messages = await db.messages;
-    const newMessage = {role: "user", content: req.body.content};
+    const frontEndConversation = req.body;
+    // console.log(req.body)
+    const convertedConvo = convertToOpenAiPromptFormat(frontEndConversation)
+
+    const newMessage = {role: "user", content: req.body};
     await db.messages.push(newMessage)
-    let response = await openai.chatComplete(db.messages, listingInfo);
+    let response = await openai.chatComplete(convertedConvo, listingInfo);
+    // console.log(db.messages)
     if (response === undefined) response = '';
     const status = response.split('****** STATUS ')
     console.log('THIS IS STATUS', status)
@@ -43,6 +47,21 @@ async function addUserMessage(req, res) {
 function mockGoogleCalendar(dateAsString) {
   console.log('This will be sent to GoogleAPI >>>>', dateAsString)
 }
+
+function convertToOpenAiPromptFormat(input) {
+  let output = []
+  input.forEach(el => {
+    if (el.isFromUser === false) {
+      output.push({ role: "assistant", content: el.content})
+    } else {
+      output.push({ role: "user", content: el.content})
+    }
+  })
+  console.log('converter function output:')
+  console.log(output)
+  return output
+}
+
 
 module.exports = { 
   addUserMessage

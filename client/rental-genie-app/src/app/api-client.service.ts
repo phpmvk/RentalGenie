@@ -25,7 +25,7 @@ export class ApiClientService {
     return this.http.get<any>(this.rootUrl + 'all-listings' + `/${id}`, { "headers": {"accept": "application/json" }})
   }
 
-  chatMessageSend(msg: Message, listingId: string): Observable<string>{
+  chatMessageSend(msg: Message[], listingId: string): Observable<string>{
     return this.http.post<string>(this.rootUrl + 'userMessage/' + listingId, msg, {  "headers": { "content-type": "application/json" }})
   }
 
