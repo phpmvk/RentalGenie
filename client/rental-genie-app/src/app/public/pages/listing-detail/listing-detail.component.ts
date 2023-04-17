@@ -13,7 +13,6 @@ export class ListingDetailComponent implements OnInit {
   listing_id: any;
   listing: any;
 
-
   constructor(
     private store: Store,
     private activatedRoute: ActivatedRoute,
@@ -35,5 +34,6 @@ export class ListingDetailComponent implements OnInit {
   findListing(id: any){
     const result = this.store.getListingById(id);
     this.listing = result;
+    console.log(this.listing)
   }
 }

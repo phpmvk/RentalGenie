@@ -18,7 +18,6 @@ export class ApiClientService {
   ) {}
   
   getAllListings(): Observable<any>{  
-    console.log('pooppooo')
     return this.http.get<any>(this.rootUrl + 'all-listings', { "headers": {"accept": "application/json" }})
   }
   
@@ -26,8 +25,8 @@ export class ApiClientService {
     return this.http.get<any>(this.rootUrl + 'all-listings' + `/${id}`, { "headers": {"accept": "application/json" }})
   }
 
-  chatMessageSend(msg: Message): Observable<string>{
-    return this.http.post<string>(this.rootUrl + 'userMessage', msg, {  "headers": { "content-type": "application/json" }})
+  chatMessageSend(msg: Message, listingId: string): Observable<string>{
+    return this.http.post<string>(this.rootUrl + 'userMessage/' + listingId, msg, {  "headers": { "content-type": "application/json" }})
   }
 
   // REMEMBER TO FIX TYPE FOR THIS:

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApiClientService } from 'src/app/api-client.service';
 import { Message } from 'src/app/types';
 
@@ -8,6 +8,9 @@ import { Message } from 'src/app/types';
   styleUrls: ['./chat-box.component.css']
 })
 export class ChatBoxComponent {
+  @Input()
+  listingId!: string
+  
   messages: Message[] = []
   showChat = false;
 
@@ -18,7 +21,7 @@ export class ChatBoxComponent {
   chatMessageSend(msg: Message){
     console.log('This is the message sent', msg)
     this.messages.push(msg)
-    this.api.chatMessageSend(msg).subscribe(res => {
+    this.api.chatMessageSend(msg, this.listingId).subscribe(res => {
       const response: Message = {
         content: res,
         isFromUser: false,
@@ -30,6 +33,7 @@ export class ChatBoxComponent {
   }
 
   toggleChat(){
+    console.log('this is the listing ID tied to this chat: ', this.listingId)
     this.showChat = !this.showChat
   }
 

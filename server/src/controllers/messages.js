@@ -7,6 +7,7 @@ const db = {
 async function addUserMessage(req, res) {
   try {
     console.log('GET received')
+    console.log('this is the listing ID >>>>>>>', req.params.listingId)
     const messages = await db.messages;
     const newMessage = {role: "user", content: req.body.content};
     await db.messages.push(newMessage)
