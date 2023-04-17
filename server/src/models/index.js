@@ -17,8 +17,8 @@ const privateListings = client.db('RentalGenie').collection('listings_private')
 exports.postListingPublic = (newListingPublic) => publicListings.insertOne(newListingPublic);
 exports.postListingPrivate = (newListingPrivate) => privateListings.insertOne(newListingPrivate)
 
+exports.getListingById = (id) => publicListings.findOne({ _id: new ObjectId(id)});
 exports.getAllListings = () => publicListings.find().toArray();
-
 exports.getListingsByAgencyId = (id) => publicListings.find({ agency_id: id}).toArray();
 
 exports.getPrivateListingByListingId = (id) => privateListings.findOne({ _id: new ObjectId(id) });

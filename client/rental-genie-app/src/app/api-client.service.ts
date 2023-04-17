@@ -20,6 +20,10 @@ export class ApiClientService {
   getAllListings(): Observable<any>{  
     return this.http.get<any>(this.rootUrl + 'all-listings', { "headers": {"accept": "application/json" }})
   }
+
+  getListingById(id:any): Observable<any>{
+    return this.http.get<any>(this.rootUrl + 'listing/' + id, { "headers": {"accept": "application/json" }})
+  }
   
   getAllListingsById(id: any){
     return this.http.get<any>(this.rootUrl + 'all-listings' + `/${id}`, { "headers": {"accept": "application/json" }})

@@ -43,6 +43,18 @@ const getAllListings = async (req, res) => {
   }
 }
 
+const getListingById = async (req, res) => {
+  try {
+    console.log('GET request for specific listing received')
+    const id = req.params.id;
+    const listing = await listingModel.getListingById(id);
+    res.status(200).json(listing)
+  } catch (e) {
+    console.error(e)
+    res.status(500).json('Error getting specific listing from DB!')
+  }
+}
+
 const getAllListingsByAgencyId = async (req, res) => {
   try {
     console.log('GET request for all listings by agency ID received')
@@ -58,5 +70,6 @@ const getAllListingsByAgencyId = async (req, res) => {
 module.exports = {
   addListing,
   getAllListings,
+  getListingById,
   getAllListingsByAgencyId
 }
