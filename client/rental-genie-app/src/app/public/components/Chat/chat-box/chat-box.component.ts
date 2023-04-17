@@ -30,7 +30,6 @@ export class ChatBoxComponent {
       console.log('This is the message received', response)
       this.messages.push(response)
     })
-    console.log(this.messages)
   }
 
   toggleChat(){
