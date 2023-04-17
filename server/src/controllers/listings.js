@@ -35,7 +35,7 @@ const addListing = async (req, res) => {
 const getAllListings = async (req, res) => {
   try {
     console.log('GET request for all listings received')
-    const allListings = await listingModel.getAllListings();
+    const allListings = await listingModel.getAllListingsPublic();
     res.status(200).json(allListings)
   } catch (e) {
     console.error(e)
@@ -47,7 +47,7 @@ const getListingById = async (req, res) => {
   try {
     console.log('GET request for specific listing received')
     const id = req.params.id;
-    const listing = await listingModel.getListingById(id);
+    const listing = await listingModel.getListingPublicById(id);
     res.status(200).json(listing)
   } catch (e) {
     console.error(e)
@@ -59,7 +59,7 @@ const getAllListingsByAgencyId = async (req, res) => {
   try {
     console.log('GET request for all listings by agency ID received')
     const agencyId = req.params.id
-    const allAgencyListings = await listingModel.getListingsByAgencyId(agencyId)
+    const allAgencyListings = await listingModel.getListingsPublicByAgencyId(agencyId)
     res.status(200).json(allAgencyListings)
   } catch (e) {
     console.error(e)

@@ -10,7 +10,7 @@ async function addUserMessage(req, res) {
     console.log('GET received')
     const listing_id = req.params.listingId;
     // console.log('this is the req.query.listingID',listing_id)
-    const listingInfo = await listingsModel.getPrivateListingByListingId(listing_id)
+    const listingInfo = await listingsModel.getListingPrivateByListingId(listing_id)
     // console.log('this is the listing info: ', listingInfo)
     const frontEndConversation = req.body;
     // console.log(req.body)
