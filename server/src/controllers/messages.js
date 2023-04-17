@@ -1,4 +1,5 @@
 const openai = require('../services/openai')
+const listingsModel = require('../models/index')
 
 const db = {
   messages: []
@@ -7,11 +8,14 @@ const db = {
 async function addUserMessage(req, res) {
   try {
     console.log('GET received')
-    console.log('this is the listing ID >>>>>>>', req.params.listingId)
+    const listing_id = req.params.listingId;
+    // console.log('this is the req.query.listingID',listing_id)
+    const listingInfo = await listingsModel.getPrivateListingByListingId(listing_id)
+    // console.log('this is the listing info: ', listingInfo)
     const messages = await db.messages;
     const newMessage = {role: "user", content: req.body.content};
     await db.messages.push(newMessage)
-    let response = await openai.chatComplete(db.messages);
+    let response = await openai.chatComplete(db.messages, listingInfo);
     if (response === undefined) response = '';
     const status = response.split('****** STATUS ')
     console.log('THIS IS STATUS', status)

@@ -34,6 +34,5 @@ export class ListingDetailComponent implements OnInit {
   findListing(id: any){
     const result = this.store.getListingById(id);
     this.listing = result;
-    console.log(this.listing)
   }
 }

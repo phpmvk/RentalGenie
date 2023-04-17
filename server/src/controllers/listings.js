@@ -4,7 +4,27 @@ const addListing = async (req, res) => {
   try {
     console.log('POST LISTING received')
     const newListing = req.body;
-    const savedListing = await listingModel.postListing(newListing)
+    const public = {
+      size: newListing.size,
+      bedrooms: newListing.bedrooms,
+      bathrooms: newListing.bathrooms,
+      description: newListing.description,
+      rent_amount: newListing.rent_amount,
+      available: true,
+    }
+    const savedListing = await listingModel.postListingPublic(public)
+    const private = {
+      _id: savedListing.insertedId,
+      address: newListing.address,
+      post_code: newListing.post_code,
+      owner_name: newListing.owner_name,
+      owner_contact: newListing.owner_contact,
+      tenant_requirements: newListing.tenant_requirements,
+      agency_id: newListing.agency_id,
+      showing_weekdays: newListing.showing_weekdays,
+      showing_hours: newListing.showing_hours,
+    }
+    const privateListing = await listingModel.postListingPrivate(private)
     res.status(201).json(savedListing)
   } catch (e) {
     console.error(e)
