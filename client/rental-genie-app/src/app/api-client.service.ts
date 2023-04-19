@@ -38,9 +38,9 @@ export class ApiClientService {
     return this.http.post<any>(this.rootUrl + 'add-listing', listing, {  "headers": { "content-type": "application/json" }})
   }
 
-  // login(user: any): Observable<any>{
-  //   return this.http.post<any>(this.rootUrl + 'agent-login', user)
-  // }
+  agentLogin(userCredentials: any): Observable<any>{
+    return this.http.post<any>(this.rootUrl + 'agent/login', {userCredentials}, {  "headers": { "content-type": "application/json" }})
+  }
 
 
 }

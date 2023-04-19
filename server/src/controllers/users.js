@@ -8,9 +8,13 @@ const register = () => {
   }
 }
 
-const login = () => {
+const login = (req,res) => {
   try {
-
+    // console.log(req.headers)
+    // console.log(req.method)
+    console.log(req.body)
+    console.log('yessssss')
+    res.status(200).json({message: 'hey there yo'})
   } catch (e) {
     
   }
