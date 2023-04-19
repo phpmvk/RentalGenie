@@ -1,18 +1,13 @@
 <div class="listing-detail-container">
-  <span>Description:<br>{{listing.description}}</span>
-  <br>
-  <span>Address: {{listing.address}}</span>
-  <br>
-  <span>Post Code: {{listing.post_code}}</span>
-  <br>
-  <span>Size: {{listing.size}}</span>
+  <span>Description: {{listing.description}}</span>
   <br>
   <span>Bedrooms: {{listing.bedrooms}}</span>
   <br>
   <span>Bathrooms: {{listing.bathrooms}}</span>
   <br>
-  <span>Rent: {{listing.rent_amount}}</span>
+  <span>Size: {{listing.size}}</span>
   <br>
+  <span>{{listing.rent_amount | currency:'EUR':true:'1.0-0'}}</span>
 </div>
 
 <app-chat-box [listingId]="listing_id"></app-chat-box>

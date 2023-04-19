@@ -1,7 +1,7 @@
 <div class="list-item-listing" (click)="onListItemListingComponentClick(listing)">
-  <span>Agency: {{listing.agency_id}}</span>
-  <span>Address: {{listing.address}}</span>
-  <span>Post Code: {{listing.post_code}}</span>
-  <span>Tenant Requirements: {{listing.tenant_requirements}}</span>
-  <span>{{listing._id}}</span>
+  <span>Description: {{listing.description}}</span>
+  <span>Bedrooms: {{listing.bedrooms}}</span>
+  <span>Bathrooms: {{listing.bathrooms}}</span>
+  <span>Size: {{listing.size}}</span>
+  <span>{{listing.rent_amount | currency:'EUR':true:'1.0-0'}}</span>
 </div>
