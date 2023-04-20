@@ -6,13 +6,39 @@ const oAuth2Client = new OAuth2(
   process.env.GOOGLE_CALENDAR_API_CLIENT_SECRET
 )
 
-const register = () => {
+const register = async (req,res) => {
   try {
+    const credential = req.body.credentials;
+    const payload = await verifyCredential(credential)
 
+    if (payload) {
+      const user = await User.findOne({ googleId: payload.sub })
+
+      if (user) {
+        // User already exists, return error
+        res.status(400).json({ error: 'User already exists' })
+      } else {
+        // Create new user
+        const newUser = new User({
+          googleId: payload.sub,
+          name: payload.name,
+          email: payload.email
+        })
+        await newUser.save()
+
+        // Generate token and send to frontend
+        const token = generateToken(newUser);
+        res.status(200).json({ token: token })
+      }
+    } else {
+      // Authentication failed!
+      res.status(401).json({ error: 'Invalid Credentials' })
+    }
   } catch (e) {
-    
+    // Handle error
   }
 }
+
 
 const login = async (req,res) => {
   try {
@@ -43,9 +69,9 @@ const login = async (req,res) => {
   }
 }
 
-
 async function verifyCredential(credential) {
   try {
+    
     //verify credential and extract the payload
     const ticket = await oAuth2Client.verifyIdToken({
       idToken: credential,
@@ -60,10 +86,6 @@ async function verifyCredential(credential) {
     return null
   }
 }
-
-
-
-
 
 
 const profile = () => {

@@ -1,4 +1,4 @@
-const listingModel = require('../models/index');
+const { PublicListing, PrivateListing } = require('../models/listing')
 
 const addListing = async (req, res) => {
   try {
@@ -12,9 +12,9 @@ const addListing = async (req, res) => {
       rent_amount: newListing.rent_amount,
       available: true,
     }
-    const savedListing = await listingModel.postListingPublic(public)
+    const savedPublicListing = await PublicListing.create(public)
     const private = {
-      _id: savedListing.insertedId,
+      _id: savedPublicListing._id,
       address: newListing.address,
       post_code: newListing.post_code,
       owner_name: newListing.owner_name,
@@ -24,7 +24,7 @@ const addListing = async (req, res) => {
       showing_weekdays: newListing.showing_weekdays,
       showing_hours: newListing.showing_hours,
     }
-    const privateListing = await listingModel.postListingPrivate(private)
+    await PrivateListing.create(private)
     res.status(201).json(savedListing)
   } catch (e) {
     console.error(e)
@@ -35,7 +35,8 @@ const addListing = async (req, res) => {
 const getAllListings = async (req, res) => {
   try {
     console.log('GET request for all listings received')
-    const allListings = await listingModel.getAllListingsPublic();
+    const allListings = await PublicListing.find();
+    console.log(allListings)
     res.status(200).json(allListings)
   } catch (e) {
     console.error(e)
@@ -47,7 +48,7 @@ const getListingById = async (req, res) => {
   try {
     console.log('GET request for specific listing received')
     const id = req.params.id;
-    const listing = await listingModel.getListingPublicById(id);
+    const listing = await PublicListing.findById(id);
     res.status(200).json(listing)
   } catch (e) {
     console.error(e)
@@ -59,7 +60,7 @@ const getAllListingsByAgencyId = async (req, res) => {
   try {
     console.log('GET request for all listings by agency ID received')
     const agencyId = req.params.id
-    const allAgencyListings = await listingModel.getListingsPublicByAgencyId(agencyId)
+    const allAgencyListings = await PublicListing.find({ agency_id: agencyId})
     res.status(200).json(allAgencyListings)
   } catch (e) {
     console.error(e)

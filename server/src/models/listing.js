@@ -1,24 +1,84 @@
+const mongoose = require('./index');
+
+const publicListingSchema = new mongoose.Schema({
+  size: {
+    type: Number,
+    required: true,
+  },
+  bedrooms: {
+    type: Number,
+    required: true,
+  },
+  bathrooms: {
+    type: Number,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  rent_amount: {
+    type: Number,
+    required: true,
+  },
+  available: {
+    type: Boolean,
+    required: true,
+  },
+})
+
+const privateListingSchema = new mongoose.Schema({
+  _id: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  post_code: {
+    type: String,
+    required: true,
+  },
+  owner_name: {
+    type: String,
+    required: true,
+  },
+  owner_contact: {
+    type: String,
+    required: true,
+  },
+  tenant_requirements: {
+    type: String,
+    required: true,
+  },
+  agency_id: {
+    type: String,
+    required: true,
+  },
+  showing_weekdays: {
+    type: [String],
+    required: true,
+  },
+  showing_hours: {
+    type: String,
+    required: true,
+  },
+})
+
+const PublicListing = mongoose.model('public_listing', publicListingSchema);
+const PrivateListing = mongoose.model('private_listing', privateListingSchema)
+
 module.exports = {
-  "id": 1,
-  "address": "123 Main Street",
-  "post_code": "12345",
-  "owner_contact": "555-1234",
-  "owner_name": "John Doe",
-  "size": 1000,
-  "bedrooms": 2,
-  "bathrooms": 1,
-  "floor": 2,
-  "heating": "Central heating",
-  "thumbnail": "https://example.com/images/thumbnail1.jpg",
-  "pictures": [
-    "https://example.com/images/picture1.jpg",
-    "https://example.com/images/picture2.jpg",
-    "https://example.com/images/picture3.jpg"
-  ],
-  "description": "Spacious 2-bedroom apartment in a great location",
-  "rent": 1500,
-  "showing_weekdays": ["Monday", "Wednesday", "Friday"],
-  "showing_hours": ["10:00am - 12:00pm", "1:00pm - 3:00pm", "4:00pm - 04:30pm"],
-  "available": true,
-  "tenant_requirements": "minimum annual income $30000, no students, dogs and cats allowed with additional deposits, smokers not allowed, should be a girl"
+  PublicListing,
+  PrivateListing,
 }
+
+// exports.postListingPublic = (newListingPublic) => PublicListing.create(newListingPublic);
+// exports.postListingPrivate = (newListingPrivate) => PrivateListing.create(newListingPrivate)
+
+// exports.getListingPublicById = (id) => PublicListing.findById(id);
+// exports.getAllListingsPublic = () => PublicListing.find();
+// exports.getListingsPublicByAgencyId = (id) => PublicListing.find({ agency_id: id });
+
+// exports.getListingPrivateByListingId = (id) => PrivateListing.findById(id);
