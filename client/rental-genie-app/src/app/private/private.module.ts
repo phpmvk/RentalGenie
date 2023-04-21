@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
+import { FullCalendarComponent } from './components/full-calendar/full-calendar.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { CalendarPageComponent } from './pages/calendar-page/calendar-page.compo
     AddListingFormComponent,
     CalendarComponent,
     CalendarPageComponent,
+    FullCalendarComponent,
   ],
   imports: [
     CommonModule,
