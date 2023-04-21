@@ -13,7 +13,8 @@
   </div>
 
   <div class="b-red dashboard-calendar-and-listings-container">
-    <app-calendar [currentEvents]="events" ></app-calendar>
+    <app-calendar></app-calendar>
+    <!-- this is to be changed once you have the thumbnails implemented -->
     <div class="dash-board-images">
       <div *ngFor="let image of imageUrls">
         <img [src]="image">
