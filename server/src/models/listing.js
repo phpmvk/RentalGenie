@@ -73,12 +73,3 @@ module.exports = {
   PublicListing,
   PrivateListing,
 }
-
-// exports.postListingPublic = (newListingPublic) => PublicListing.create(newListingPublic);
-// exports.postListingPrivate = (newListingPrivate) => PrivateListing.create(newListingPrivate)
-
-// exports.getListingPublicById = (id) => PublicListing.findById(id);
-// exports.getAllListingsPublic = () => PublicListing.find();
-// exports.getListingsPublicByAgencyId = (id) => PublicListing.find({ agency_id: id });
-
-// exports.getListingPrivateByListingId = (id) => PrivateListing.findById(id);

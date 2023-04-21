@@ -36,7 +36,6 @@ const getAllListings = async (req, res) => {
   try {
     console.log('GET request for all listings received')
     const allListings = await PublicListing.find();
-    console.log(allListings)
     res.status(200).json(allListings)
   } catch (e) {
     console.error(e)

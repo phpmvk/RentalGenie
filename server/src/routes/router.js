@@ -20,4 +20,9 @@ router.post("/agent/login", usersController.login)
 router.get("/agent/profile", usersController.profile)
 router.post("/agent/logout", usersController.logout)
 
+
+//deprecated by me
+// router.get("/auth/google/callback", usersController.callbackUrl)
+// router.get("/auth/google", usersController.generateAUthUrl)
+
 module.exports = router;
