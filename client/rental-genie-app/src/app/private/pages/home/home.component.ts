@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router'
+import { ApiClientService } from 'src/app/api-client.service';
 import { AuthService } from 'src/app/auth.service';
+import { Event } from 'src/app/types';
 
 @Component({
   selector: 'app-home',
@@ -9,26 +11,19 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class HomeComponent {
 
+  events!: [Event]
+  imageUrls = [
+    'https://picsum.photos/200',
+    'https://picsum.photos/200',
+    'https://picsum.photos/200',   
+  ]
+
   constructor(
-    private activatedRoute: ActivatedRoute,
-    //deprecated by me
-    // private service: AuthService,
+    private api: ApiClientService
   ){}
 
+  ngOnInit(){
+    this.api.getAllEvents().subscribe(res => this.events = res)
+  }
   
 }
-
-// DEPRECATED BY ME
-// ngOnInit(){ 
-  //deprecated by me
-  // this.activatedRoute.queryParams.subscribe(params => {
-  //   console.log(params)
-  //   this.callGoogleBack('hey')
-  // })
-// }
-
-
-//deprecated by me
-// callGoogleBack(params: any) {
-//   return this.service.GoogleCallback(params).subscribe(res => console.log('hi'))
-// }

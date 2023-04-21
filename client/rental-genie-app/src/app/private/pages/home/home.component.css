@@ -1,0 +1,14 @@
+.dashboard-container {
+  display: flex;
+}
+
+.dashboard-calendar-and-listings-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-board-images {
+  display: flex;
+  /* width: 100%; */
+  /* overflow-x: auto; */
+}

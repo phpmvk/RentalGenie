@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Message } from './types';
 import { Observable } from 'rxjs';
+import { Event } from './types'
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,10 @@ export class ApiClientService {
 
   agentLogin(userCredentials: any): Observable<any>{
     return this.http.post<any>(this.rootUrl + 'agent/login', {userCredentials}, {  "headers": { "content-type": "application/json" }})
+  }
+
+  getAllEvents(): Observable<[Event]>{
+    return this.http.get<any>(this.rootUrl + 'agent/calendar/all', {  "headers": { "content-type": "application/json" }})
   }
 
 

@@ -8,6 +8,8 @@ import { AddListingComponent } from './pages/add-listing/add-listing.component';
 import { MylistingsComponent } from './pages/mylistings/mylistings.component';
 import { AddListingFormComponent } from './components/add-listing-form/add-listing-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     AddListingComponent,
     MylistingsComponent,
-    AddListingFormComponent
+    AddListingFormComponent,
+    CalendarComponent,
   ],
   imports: [
     CommonModule,
     PrivateRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FullCalendarModule,
   ],
   exports: [
     PrivateComponent
