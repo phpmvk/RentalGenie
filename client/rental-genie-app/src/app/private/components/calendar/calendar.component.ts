@@ -12,13 +12,12 @@ import { Event } from 'src/app/types';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  @Input() view!: string
   currentEvents!: Event[]
 
   constructor(
     private api: ApiClientService,
     private pStore: PrivateStore,
-    ){}
+  ){}
     
   ngOnInit(): void {
     this.getAllEvents()
@@ -41,7 +40,7 @@ export class CalendarComponent implements OnInit {
   }
   
   calendarOptions: CalendarOptions = {
-    initialView: 'timeGridThreeDay',
+    initialView: 'timeGridTwoDay',
     headerToolbar: {
       right: 'prev next today',
       center: 'title',
@@ -49,10 +48,10 @@ export class CalendarComponent implements OnInit {
       // center: 'timeGridWeek,timeGridThreeDay' // buttons for switching between views
     },
     views: {
-      timeGridThreeDay: {
+      timeGridTwoDay: {
         type: 'timeGrid',
-        duration: { days: 3 },
-        buttonText: '3 day'
+        duration: { days: 2 },
+        buttonText: '2 day'
       }
     },
     plugins: [

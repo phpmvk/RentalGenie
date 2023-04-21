@@ -25,7 +25,7 @@ const addListing = async (req, res) => {
       showing_hours: newListing.showing_hours,
     }
     await PrivateListing.create(private)
-    res.status(201).json(savedListing)
+    res.status(201).json(savedPublicListing)
   } catch (e) {
     console.error(e)
     res.status(500).json('Error adding listing to DB!')
