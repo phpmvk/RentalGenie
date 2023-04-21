@@ -10,6 +10,7 @@ import { AddListingFormComponent } from './components/add-listing-form/add-listi
 import { ReactiveFormsModule } from '@angular/forms';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     MylistingsComponent,
     AddListingFormComponent,
     CalendarComponent,
+    CalendarPageComponent,
   ],
   imports: [
     CommonModule,
