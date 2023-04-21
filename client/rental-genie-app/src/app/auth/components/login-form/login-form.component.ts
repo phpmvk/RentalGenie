@@ -11,7 +11,7 @@ import { GOOGLE_API_CLIENT_ID } from '../../../environment'
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
-export class LoginFormComponent implements OnInit{
+export class LoginFormComponent{
 
   loginForm!: FormGroup;
 
@@ -32,42 +32,48 @@ export class LoginFormComponent implements OnInit{
     console.log(this.loginForm.value)
     const userInput = this.loginForm.value;
     this.loginForm.reset();
-
   }
 
-  ngOnInit() {
-    //@ts-ignore
-    window.onGoogleLibraryLoad = () => {
-      //@ts-ignore
-      google.accounts.id.initialize({
-        client_id: GOOGLE_API_CLIENT_ID,
-        callback: this.handleCredentialResponse.bind(this),
-        auto_select: false,
-        cancel_on_tap_outside: true,
-      });
-      //@ts-ignore
-      google.accounts.id.renderButton(
-        //@ts-ignore
-        document.getElementById("buttonDiv"),
-        { theme: "outline", size: "large", width: "100%" }
-      );
-      //@ts-ignore
-      google.accounts.id.prompt((notification: PromptMomentNotification) => {});
-    }
-  }
-    
-  async handleCredentialResponse(response: CredentialResponse){
-    await this.service.LoginWithGoogle(response.credential).subscribe(
-      //@ts-ignore
-      x => {
-        localStorage.setItem("token", x.token);
-        this._ngZone.run(() => {
-          this.router.navigate(['/private/']);
-        })
-      },
-      (error: any) => {
-        console.log(error)
-      }
-    )
-  }
+  
 }
+
+
+//deprecated by me
+// ngOnInit() {
+//   //@ts-ignore
+//   window.onGoogleLibraryLoad = () => {
+//     //@ts-ignore
+//     google.accounts.id.initialize({
+//       client_id: GOOGLE_API_CLIENT_ID,
+//       callback: this.handleCredentialResponse.bind(this),
+//       auto_select: false,
+//       cancel_on_tap_outside: true,
+      
+//     });
+//     //@ts-ignore
+//     google.accounts.id.renderButton(
+//       //@ts-ignore
+//       document.getElementById("buttonDiv"),
+//       { theme: "outline", size: "large", width: "100%" }
+//     );
+//     //@ts-ignore
+//     // google.accounts.id.prompt((notification: PromptMomentNotification) => {});
+//   }
+// }
+  
+// handleCredentialResponse(response: CredentialResponse){
+//   console.log(response)
+//   this.service.LoginWithGoogle(response.credential).subscribe(
+//     //@ts-ignore
+//     res => window.location.href = res.redirect),
+//     // x => {
+//     //   localStorage.setItem("token", x.token);
+//     //   console.log(x)
+//     //   this._ngZone.run(() => {
+//     //     this.router.navigate(['/private/']);
+//     //   })
+//     // },
+//   (error: any) => {
+//     console.log(error)
+//   } 
+// }
