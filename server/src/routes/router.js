@@ -25,8 +25,4 @@ router.post("/agent/logout", usersController.logout)
 router.get("/agent/calendar/all", eventsController.getAllEvents);
 router.post("/agent/calendar/insert-event", eventsController.addEvent)
 
-//deprecated by me
-// router.get("/auth/google/callback", usersController.callbackUrl)
-// router.get("/auth/google", usersController.generateAUthUrl)
-
 module.exports = router;
