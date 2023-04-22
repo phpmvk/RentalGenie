@@ -45,3 +45,7 @@ env
 *.env
 
 environment.ts
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
