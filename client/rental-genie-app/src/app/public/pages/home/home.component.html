@@ -1,4 +1,20 @@
 <div >
+  
+  <div class="listing-display-handlers">
+    <button class="sort-price" (click)="sortByPrice()">{{priceSortedByAscending ? 'Price: ascending': 'Price: descending'}}</button>
+    
+    <select>
+      <option value="">Select City</option>
+      <option *ngFor="let city of allCities" [value]="city">{{ city }}</option>
+    </select>
+    
+    <select>
+      <option value="">Select District</option>
+      <option *ngFor="let district of allDistricts" [value]="district">{{ district }}</option>
+    </select>
+
+  </div>
+
   <div class="all-listings-container" *ngIf="allListings.length >0 else noListings">
     <app-list-item-listing *ngFor="let listing of allListings" [listing]="listing"></app-list-item-listing>
   </div>
