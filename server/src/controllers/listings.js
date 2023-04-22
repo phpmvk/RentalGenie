@@ -11,6 +11,7 @@ const addListing = async (req, res) => {
       description: newListing.description,
       rent_amount: newListing.rent_amount,
       available: true,
+      images: newListing.images,
     }
     const savedPublicListing = await PublicListing.create(public)
     const private = {

@@ -29,20 +29,26 @@
   <label>Rent Amount:</label>
   <input type="number" formControlName="rent_amount">
 
+  <label>Tenant Requirements:</label>
+  <textarea formControlName="tenant_requirements"></textarea>
+  
+  <label for="image">Upload Listing Images:</label>
+  <input type="file" id="image" formControlName="image" (change)="test($event)" multiple>
+
+  <label>Showing Availability:</label>
   <div class="availability-selector">
-    <label>Showing Weekdays:</label>
+    <!-- <label>Showing Weekdays:</label> -->
     <div formGroupName="showing_weekdays">
       <div *ngFor="let day of weekdays">
         <label>{{ day }}</label>
         <input type="checkbox" [formControlName]="day">
       </div>
     </div>
-    <label>Showing Hours:</label>
-    <input type="text" formControlName="showing_hours">
+    <div>
+      <label>Showing Hours:</label>
+      <input type="text" formControlName="showing_hours">
+    </div>
   </div>
-  
-  <label>Tenant Requirements:</label>
-  <textarea formControlName="tenant_requirements"></textarea>
 
   <button type="submit" [disabled]="!addListingForm.valid">Submit</button>
 </form>

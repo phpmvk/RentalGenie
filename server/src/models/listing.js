@@ -25,6 +25,9 @@ const publicListingSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  images: {
+    type: [String],
+  }
 })
 
 const privateListingSchema = new mongoose.Schema({

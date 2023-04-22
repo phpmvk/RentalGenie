@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ApiClientService } from 'src/app/api-client.service';
 
@@ -7,7 +8,11 @@ import { ApiClientService } from 'src/app/api-client.service';
   templateUrl: './add-listing-form.component.html',
   styleUrls: ['./add-listing-form.component.css']
 })
-export class AddListingFormComponent {
+export class AddListingFormComponent implements OnInit {
+  images: string[] = [];
+  selectedImages: File[] = [];
+
+  formSubmissionFolder!: string;
 
   addListingForm!: FormGroup;
 
@@ -15,7 +20,8 @@ export class AddListingFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private api: ApiClientService
+    private api: ApiClientService,
+    private storage: Storage,
     ) {
     this.addListingForm = this.fb.group({
       agency_id: ['', Validators.required],
@@ -38,22 +44,65 @@ export class AddListingFormComponent {
       showing_hours: ['', Validators.required],
       available: [true],
       tenant_requirements: ['', Validators.required],
+      image: [null, Validators.required]
     });
   }
 
-  onSubmit() {
+  ngOnInit(): void {
+    this.formSubmissionFolder = `${Date.now()}`;
+    this.getImages()
+  }
+
+  async onSubmit() {
     const selectedDays = this.weekdays.filter(day => this.addListingForm.value.showing_weekdays[day]);
     this.addListingForm.patchValue({showing_weekdays: selectedDays});
-    console.log(this.addListingForm.value);
     const newListing = this.addListingForm.value
-    console.log(this.addListingForm.value.showing_weekdays);
     const showingDays = this.addListingForm.value.showing_weekdays
     const showingDaysArray = []
     for (let day in showingDays) {
       if (showingDays[day] === true) showingDaysArray.push(day)
     }
     newListing.showing_weekdays = showingDaysArray
-    console.log('Corrected Listing', newListing)
+
+    //upload images and get URLs
+    const imageUrls: string[] = [];
+    for (let i = 0; i < this.selectedImages.length; i++) {
+      const file = this.selectedImages[i];
+      const imgRef = ref(this.storage, `image/${this.formSubmissionFolder}/${file.name}`);
+      await uploadBytes(imgRef, file);
+      const url = await getDownloadURL(imgRef);
+      imageUrls.push(url);
+    }
+    
+    //add iamge URLs to the newListing object
+    newListing.images = imageUrls;
+
+    //send form to backend
     this.api.postNewListing(newListing).subscribe(res => console.log(res))
   }
+
+  test($event: any) {
+    const files = $event.target.files
+    console.log(files)
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      this.selectedImages.push(file);
+      const imgRef = ref(this.storage, `image/${this.formSubmissionFolder}/${file.name}`);
+      uploadBytes(imgRef, file).then(res => {
+        console.log(res);
+        this.getImages();
+      }).catch(err => console.error(err));
+    }
+  }
+
+  getImages() {
+    const imagesRef = ref(this.storage, `images/${this.formSubmissionFolder}`);
+    listAll(imagesRef).then(async res => {
+      this.images = [];
+      for(let image of res.items) {
+        const url = await getDownloadURL(image)
+        this.images.push(url)
+      }
+    }).catch(err => console.error(err))
+  };
 }
