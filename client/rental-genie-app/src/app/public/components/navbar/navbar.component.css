@@ -4,6 +4,7 @@
   transition: width var(--transition-speed) ease;
   height: 100%;
   width: 5rem;
+  z-index: 99999;
 }
 
 .navbar-nav {

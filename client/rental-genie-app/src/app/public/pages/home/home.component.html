@@ -1,5 +1,5 @@
-<div class="all-listings-container">
-  <div *ngIf="allListings.length >0 else noListings">
+<div >
+  <div class="all-listings-container" *ngIf="allListings.length >0 else noListings">
     <app-list-item-listing *ngFor="let listing of allListings" [listing]="listing"></app-list-item-listing>
   </div>
 

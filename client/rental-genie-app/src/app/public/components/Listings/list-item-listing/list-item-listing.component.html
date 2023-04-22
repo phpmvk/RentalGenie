@@ -1,7 +1,27 @@
 <div class="list-item-listing" (click)="onListItemListingComponentClick(listing)">
-  <span>Description: {{listing.description}}</span>
-  <span>Bedrooms: {{listing.bedrooms}}</span>
-  <span>Bathrooms: {{listing.bathrooms}}</span>
-  <span>Size: {{listing.size}}</span>
-  <span>{{listing.rent_amount | currency:'EUR':'symbol':'1.0-0'}}</span>
+
+  <figure>
+    <img [src]="listing.images[0]" alt="">
+  </figure>
+  
+  <div class="list-item-text-container">
+    
+    <div class="listing-numbers">
+      <span>
+        {{listing.bedrooms === 0 ? 'Studio' : 
+        (listing.bedrooms === 1 ? '1 bedroom' : listing.bedrooms + ' bedrooms')}}
+      </span> &#x2022;      
+      <span>{{listing.bathrooms}} {{listing.bathrooms < 2 ? 'bathroom' : 'bathrooms'}}</span> &#x2022;
+      <span>{{listing.size}} m&#178;</span>
+    </div>
+
+    <div class="listing-description" >
+      {{listing.description}}
+    </div>
+
+    <div class="listing-price">
+      <span>{{listing.rent_amount | currency:'EUR':'symbol':'1.0-0'}}</span>
+    </div>
+
+  </div>
 </div>
