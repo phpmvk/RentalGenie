@@ -26,12 +26,15 @@ export class AddListingFormComponent implements OnInit {
     this.addListingForm = this.fb.group({
       agency_id: ['', Validators.required],
       address: ['', Validators.required],
+      city: ['', Validators.required], //
+      district: ['', Validators.required], //
       post_code: ['', Validators.required],
       owner_name: ['', Validators.required],
       owner_contact: ['', Validators.required],
       size: [null],
       bedrooms: [null],
       bathrooms: [null],
+      header: ['', Validators.required], //
       description: ['', Validators.required],
       rent_amount: [null],
       showing_weekdays: new FormGroup({

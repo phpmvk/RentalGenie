@@ -27,7 +27,19 @@ const publicListingSchema = new mongoose.Schema({
   },
   images: {
     type: [String],
-  }
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  district: {
+    type: String,
+    required: true,
+  },
+  header: {
+    type: String,
+    required: true,
+  },
 })
 
 const privateListingSchema = new mongoose.Schema({

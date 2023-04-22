@@ -9,9 +9,12 @@ const addListing = async (req, res) => {
       bedrooms: newListing.bedrooms,
       bathrooms: newListing.bathrooms,
       description: newListing.description,
+      header: newListing.header,
       rent_amount: newListing.rent_amount,
       available: true,
       images: newListing.images,
+      district: newListing.district,
+      city: newListing.city,
     }
     const savedPublicListing = await PublicListing.create(public)
     const private = {
