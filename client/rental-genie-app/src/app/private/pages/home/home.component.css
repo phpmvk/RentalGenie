@@ -1,14 +1,52 @@
 .dashboard-container {
   display: flex;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.dashboard-left-card {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.agency-logo, .events-list {
+  flex-basis: 50%;
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.agency-logo img {
+  max-width: 320px;
 }
 
 .dashboard-calendar-and-listings-container {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
-.dash-board-images {
+.dashboard-right-card {
+  flex-grow: 1;
   display: flex;
-  /* width: 100%; */
-  /* overflow-x: auto; */
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
 }
+
+
+/* .dashboard-listing-images {
+  box-sizing: border-box;
+  align-self: flex-end;
+  border: 2px solid purple;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+} */

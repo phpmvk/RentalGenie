@@ -41,12 +41,6 @@ export class CalendarComponent implements OnInit {
   
   calendarOptions: CalendarOptions = {
     initialView: 'timeGridTwoDay',
-    headerToolbar: {
-      right: 'prev next today',
-      center: 'title',
-      // left: 'hi',
-      // center: 'timeGridWeek,timeGridThreeDay' // buttons for switching between views
-    },
     views: {
       timeGridTwoDay: {
         type: 'timeGrid',

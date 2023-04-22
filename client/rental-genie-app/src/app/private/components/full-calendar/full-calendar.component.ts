@@ -20,11 +20,14 @@ export class FullCalendarComponent implements OnInit {
   }
 
   calendarOptions: CalendarOptions = {
-    initialView: 'timeGridWeek',
+    initialView: 'dayGridWeek',
     headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      start: 'title',
+      center: '',
+      end: 'today prev,next'
+      // left: 'prev,next today',
+      // center: 'title',
+      // right: 'dayGridMonth,timeGridWeek,dayGridWeek,timeGridDay'
       // center: 'timeGridWeek,timeGridThreeDay' // buttons for switching between views
     },
     views: {
@@ -43,6 +46,13 @@ export class FullCalendarComponent implements OnInit {
     // selectMirror: true,
     // selectable: true,
     weekends: true,
+    // contentHeight: '80vh',
+    eventClick: function(info){
+      info.jsEvent.preventDefault();
+      prompt('hey!')
+      
+    },
   };
+
 
 }

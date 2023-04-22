@@ -4,3 +4,4 @@ env
 /randomStuff
 .gitignore
 credentials.json
+/temp_assets

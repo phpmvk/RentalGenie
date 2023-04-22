@@ -37,7 +37,7 @@ async function addUserMessage(req, res) {
 }
 
 async function eventScheduler(dateAsString) {
-  console.log('This will be sent to GoogleAPI >>>>', dateAsString)
+  console.log('This was sent to DB >>>', dateAsString)
   const event = JSON.parse(dateAsString)
   console.log(event)
   await Event.create(event)

@@ -1,24 +1,33 @@
+<!-- this is to be changed once you have the thumbnails implemented
+<div class="dashboard-listing-images">
+  <img [src]="image">
+  <div *ngFor="let image of imageUrls">
+  </div>
+</div> -->
 
-<div class="b-red dashboard-container">
+<div class="dashboard-container">
 
-  <div class="b-red dashboard-events-list-container">
-    <!-- Mybe filter out previous events and only show NEXT events here -->
-    <h3>All Events ({{events.length}})</h3>
-    <ul>
-      <li *ngFor="let event of events">
-        <b>{{event.title}}</b>
-        <i>{{event.start}}</i>
-      </li>
-    </ul>
+  <div class="dashboard-left-card">
+    
+    <div class="agency-logo b-red">
+      <img src="https://picsum.photos/400" alt="">
+    </div>
+    
+    <div class="events-list b-red">
+      <ul>
+        <!-- Mybe filter out previous events and only show NEXT events here -->
+        All Events:
+        <li *ngFor="let event of events">
+          <b>{{event.title}}</b>
+          <i>{{event.start}}</i>
+        </li>
+      </ul>
+    </div>
   </div>
 
-  <div class="b-red dashboard-calendar-and-listings-container">
+  <div class="dashboard-right-card b-red">
+
     <app-calendar></app-calendar>
-    <!-- this is to be changed once you have the thumbnails implemented -->
-    <div class="dash-board-images">
-      <div *ngFor="let image of imageUrls">
-        <img [src]="image">
-      </div>
-    </div>
+
   </div>
 </div>
