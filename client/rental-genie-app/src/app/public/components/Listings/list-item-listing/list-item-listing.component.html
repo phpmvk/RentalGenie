@@ -6,7 +6,7 @@
   
   <div class="list-item-text-container">
     
-    <div class="listing-numbers">
+    <div class="listing-figures">
       <span>
         {{listing.bedrooms === 0 ? 'Studio' : 
         (listing.bedrooms === 1 ? '1 bedroom' : listing.bedrooms + ' bedrooms')}}
@@ -15,12 +15,18 @@
       <span>{{listing.size}} m&#178;</span>
     </div>
 
-    <div class="listing-description" >
+    <div class="header">
+      {{listing.header}}
+    </div>
+
+    <div class="listing-description">
       {{listing.description}}
     </div>
 
-    <div class="listing-price">
-      <span>{{listing.rent_amount | currency:'EUR':'symbol':'1.0-0'}}</span>
+    <div class="listing-footer">
+      <span>{{listing.district}}</span>&#x2022;
+      <span>{{listing.city}}</span> &#x2022;
+      <span>{{listing.rent_amount | currency:'EUR':'symbol':'1.0-0'}}</span> 
     </div>
 
   </div>

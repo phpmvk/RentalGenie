@@ -62,20 +62,24 @@ img:hover {
   justify-content: space-between;
   height: 100%;
 }
-.listing-description {
-  display: -webkit-box; 
-  -webkit-line-clamp: 6  ; 
-  -webkit-box-orient: vertical;
-  overflow: hidden; 
-}
-.listing-numbers{
-  /* flex: 0 0 auto; */
+.listing-figures {
   display: flex;
   justify-content: center;
   gap: 0.4rem;
 }
-.listing-price {
-  /* flex: 0 0 auto; */
+.header {
+  font-weight: bold;
+  text-align: center;
+}
+.listing-description {
+  display: -webkit-box; 
+  -webkit-line-clamp: 4  ; 
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+  text-align: center;
+}
+.listing-footer {
   display: flex;
   justify-content: center;
+  gap: 0.4rem;
 }
