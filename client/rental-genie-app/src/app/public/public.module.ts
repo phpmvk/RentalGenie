@@ -13,6 +13,7 @@ import { PublicComponent } from './public.component';
 import { PublicRoutingModule } from './public-routing.module';
 import { ListingDetailComponent } from './pages/listing-detail/listing-detail.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HomeComponent } from './pages/home/home.component';
     PublicComponent,
     ListingDetailComponent,
     HomeComponent,
+    LandingComponent,
   ],
   imports: [
     CommonModule,
