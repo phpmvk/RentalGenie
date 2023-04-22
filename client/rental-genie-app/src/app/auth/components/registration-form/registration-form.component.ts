@@ -2,7 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 import { CredentialResponse, PromptMomentNotification } from 'google-one-tap';
-import { GOOGLE_API_CLIENT_ID } from '../../../environment';
+
 
 @Component({
   selector: 'app-registration-form',

@@ -4,7 +4,6 @@ import { ApiClientService } from 'src/app/api-client.service';
 import { CredentialResponse, PromptMomentNotification } from 'google-one-tap'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
-import { GOOGLE_API_CLIENT_ID } from '../../../environment'
 
 @Component({
   selector: 'app-login-form',
