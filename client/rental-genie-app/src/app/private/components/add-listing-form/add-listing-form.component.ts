@@ -79,6 +79,9 @@ export class AddListingFormComponent implements OnInit {
 
     //send form to backend
     this.api.postNewListing(newListing).subscribe(res => console.log(res))
+    this.addListingForm.reset();
+    this.formSubmissionFolder = `${Date.now()}` // this makes sure that if someone doesn't leave the page before uploading another listing, they still create a new folder in Firebase
+    this.selectedImages = []; //reset this so that new submissions don't have the old images
   }
 
   test($event: any) {
