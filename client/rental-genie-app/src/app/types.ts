@@ -13,3 +13,18 @@ export type Event = {
   agency_id: string,
   listing_id: string,
 }
+
+export type PublicListing = {
+  _id: string,
+  size: number,
+  bedrooms: number,
+  bathrooms: number,
+  description: string,
+  rent_amount: number,
+  available: boolean,
+  images: string[],
+  __v: string,
+  city: string,
+  district: string,
+  header: string,
+}
