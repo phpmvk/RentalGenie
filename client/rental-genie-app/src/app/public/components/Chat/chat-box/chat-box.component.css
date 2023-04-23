@@ -8,6 +8,7 @@
 }
 
 .chat-box {
+  background-color: white;
   box-sizing: border-box;
   max-height: 450px;
   display: flex;
