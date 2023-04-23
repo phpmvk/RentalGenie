@@ -1,0 +1,17 @@
+<nav class="nav">
+  <button (click)="expandNav()"><i class="fa-solid fa-bars"></i></button>
+  <hr />
+  <ul class="nav__list">
+    <li
+      class="nav__list-item {{ link.special ? 'nav__list-item--last' : '' }}"
+      *ngFor="let link of navLinks"
+    >
+      <a routerLink="{{ link.href }}" class="nav__list-item__link">
+        <i class="fa-solid fa-{{ link.icon }}"></i>
+        <span class="nav__list-item__link-text">
+          {{ link.name }}
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
