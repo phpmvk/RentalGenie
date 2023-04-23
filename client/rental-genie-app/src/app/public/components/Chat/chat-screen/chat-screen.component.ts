@@ -13,24 +13,13 @@ export class ChatScreenComponent implements AfterViewChecked {
   @Input()
   messages: Message[] = [];
 
-  
   ngAfterViewChecked() {
     this.scrollDown();
   }
   
   scrollDown() {
+    const test = document.getElementsByClassName('message')
+    test[test.length - 1].scrollIntoView();
   }
   
 }
-
-// const element = this.scrollScreenRef.nativeElement;
-// element.scrollTop = 100;
-// console.log('scrollTop:', element.scrollTop);
-// console.log('scrollHeight:', element.scrollHeight);
-// console.log('offsetHeight:', element.offsetHeight);
-
-// const element = document.getElementById("focusBtn");
-// console.log(element)
-// console.log(window)
-// console.log(document.body)
-// element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
