@@ -1,7 +1,0 @@
-main {
-  box-sizing: border-box;
-  margin-left: 5rem;
-  padding: 0.5rem;
-  height: 100vh;
-  background-color: var(--bg-tertiary);
-}
