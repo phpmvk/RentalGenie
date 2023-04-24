@@ -1,19 +1,17 @@
-<p>login-form works!</p>
-
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form b-red">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+  <span>🧞‍♂️</span>
+  <br>
   <label>Username</label>
   <input type="text" formControlName="username">
 
   <label>Password</label>
-  <input type="text" formControlName="password">
+  <input type="password" formControlName="password">
 
-  <button type="submit" [disabled]="!loginForm.valid">Log in</button>
+  <!-- <button type="submit" [disabled]="!loginForm.valid">Log in</button> -->
+  <a routerLink="/private/home"><button [disabled]="!loginForm.valid">Login</button></a>
+  <br>
+  <a routerLink="/auth/register">Register</a>
+  <br>
+  <a routerLink="/public/home">Return</a>
 </form>
 
-
-<!-- deprecated by me -->
-<!-- <div class="" id="google-button"></div>
-<div>
-  <h2>Log in below</h2>
-  <button id="buttonDiv"></button>
-</div> -->
