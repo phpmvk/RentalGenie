@@ -79,12 +79,14 @@
   border-radius: 2px;
   font-size: 0.8rem;
   text-align: center;
+  background-color: rgb(209, 202, 202);
 }
 .individual-listing__information-container-card > i {
   font-size: 1.3rem;
 }
 .individual-listing__information-container-card__false {
-  color: var(--text-tertiary);
+  /* color: var(--text-tertiary); */
+  background-color: transparent;
 }
 
 

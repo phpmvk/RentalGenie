@@ -35,13 +35,10 @@ async function addUserMessage(req, res) {
 }
 
 async function eventScheduler(dateAsString) {
-  console.log('Date as String START: ')
-  console.log(dateAsString)
-  console.log(': END')
+  if (dateAsString[dateAsString.length -1] === '.') {
+    dateAsString.splice(dateAsString.length - 1, 1)
+  };
   const event = JSON.parse(dateAsString)
-  console.log('Parsed START: ')
-  console.log(event)
-  console.log(': END')
   await Event.create(event)
 }
 
