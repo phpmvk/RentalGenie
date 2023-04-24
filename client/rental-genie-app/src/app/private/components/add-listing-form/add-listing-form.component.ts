@@ -36,7 +36,7 @@ export class AddListingFormComponent implements OnInit {
       bathrooms: [null],
       header: ['', Validators.required], //
       description: ['', Validators.required],
-      rent_amount: [null],
+      rent_amount: [null, Validators.required],
       showing_weekdays: new FormGroup({
         Monday: new FormControl(false),
         Tuesday: new FormControl(false),
@@ -47,7 +47,12 @@ export class AddListingFormComponent implements OnInit {
       showing_hours: ['', Validators.required],
       available: [true],
       tenant_requirements: ['', Validators.required],
-      image: [null, Validators.required]
+      image: [null, Validators.required],
+      furnished: [false],
+      floor: [null, Validators.required],
+      pets_allowed: [false],
+      parking_spots: [null, Validators.required],
+      close_to_public_transport: [false],
     });
   }
 
@@ -87,7 +92,7 @@ export class AddListingFormComponent implements OnInit {
     this.selectedImages = []; //reset this so that new submissions don't have the old images
   }
 
-  test($event: any) {
+  imageUpload($event: any) {
     const files = $event.target.files
     console.log(files)
     for (let i = 0; i < files.length; i++) {
