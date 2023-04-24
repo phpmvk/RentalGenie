@@ -1,5 +1,4 @@
 const openai = require('../services/openai')
-const listingsModel = require('../models/index')
 const { PublicListing, PrivateListing } = require('../models/listing')
 const Event = require('../models/event')
 
@@ -7,16 +6,15 @@ async function addUserMessage(req, res) {
   try {
     console.log('addUserMEssage GET received')
     const listing_id = req.params.listingId;
-    // console.log('this is the req.query.listingID',listing_id)
     const listingInfo = await PrivateListing.findById(listing_id)
-    // console.log('this is the listing info: ', listingInfo)
     const frontEndConversation = req.body;
-    // console.log(req.body)
     const convertedConvo = convertToOpenAiPromptFormat(frontEndConversation)
     let response = await openai.chatComplete(convertedConvo, listingInfo);
-    if (response === undefined) response = 'Sorry, I had an issue. Please come back in a few minutes and try again :)';
+    if (response === undefined) {
+      res.status(200).json('Sorry, I had an issue. Please come back in a few minutes and try again :)')
+      return
+    } 
     const status = response.split('****** STATUS ')
-    // console.log('THIS IS STATUS', status)
     if (status.length > 1) {
       if (status[1] === 'denied.' || status[1] === 'denied') {
         console.log('USER Denied')
@@ -37,9 +35,13 @@ async function addUserMessage(req, res) {
 }
 
 async function eventScheduler(dateAsString) {
-  console.log('This was sent to DB >>>', dateAsString)
+  console.log('Date as String START: ')
+  console.log(dateAsString)
+  console.log(': END')
   const event = JSON.parse(dateAsString)
+  console.log('Parsed START: ')
   console.log(event)
+  console.log(': END')
   await Event.create(event)
 }
 
@@ -52,8 +54,6 @@ function convertToOpenAiPromptFormat(input) {
       output.push({ role: "user", content: el.content})
     }
   })
-  console.log('converter function output:')
-  console.log(output)
   return output
 }
 

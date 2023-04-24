@@ -2,9 +2,11 @@
   --text-primary: white;
   --text-hover: #23232e;
   --text-secondary: #ececec;
+  --text-tertiary: rgb(204, 201, 201);
   --bg-primary: #23232e;
   --bg-secondary: #4e4e65;
   --bg-tertiary: #f2f2f2;
+  --border-primary: rgb(173, 168, 168);
   font-family: arial;
 }
 
