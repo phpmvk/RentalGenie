@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListItemListingComponent } from './components/Listings/list-item-listing/list-item-listing.component';
 import { IndividualListingComponent } from './components/Listings/individual-listing/individual-listing.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChatToggleComponent } from './components/Chat/chat-toggle/chat-toggle.component';
 import { ChatBoxComponent } from './components/Chat/chat-box/chat-box.component';
 import { ChatInputComponent } from './components/Chat/chat-input/chat-input.component';
@@ -14,12 +13,12 @@ import { PublicRoutingModule } from './public-routing.module';
 import { ListingDetailComponent } from './pages/listing-detail/listing-detail.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     ListItemListingComponent,
     IndividualListingComponent,
-    NavbarComponent,
     ChatToggleComponent,
     ChatBoxComponent,
     ChatInputComponent,
@@ -34,6 +33,7 @@ import { LandingComponent } from './pages/landing/landing.component';
     ReactiveFormsModule,
     HttpClientModule,
     PublicRoutingModule,
+    SharedModule
   ],
   exports: [
     PublicComponent

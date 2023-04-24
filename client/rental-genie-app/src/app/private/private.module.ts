@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { PrivateComponent } from './private.component';
 import { PrivateRoutingModule } from './private-routing.module';
 import { HomeComponent } from './pages/home/home.component';
@@ -12,11 +11,11 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 import { FullCalendarComponent } from './components/full-calendar/full-calendar.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    NavbarComponent,
     PrivateComponent,
     HomeComponent,
     AddListingComponent,
@@ -31,6 +30,7 @@ import { FullCalendarComponent } from './components/full-calendar/full-calendar.
     PrivateRoutingModule,
     ReactiveFormsModule,
     FullCalendarModule,
+    SharedModule
   ],
   exports: [
     PrivateComponent
