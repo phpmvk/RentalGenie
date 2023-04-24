@@ -40,6 +40,26 @@ const publicListingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  furnished: {
+    type: Boolean,
+    required: true,
+  },
+  pets_allowed: {
+    type: Boolean,
+    required: true,
+  },
+  parking_spots: {
+    type: Number,
+    required: true,
+  },
+  floor: {
+    type: Number,
+    required: true,
+  },
+  close_to_public_transport: {
+    type: Boolean,
+    required: true,
+  },
 })
 
 const privateListingSchema = new mongoose.Schema({

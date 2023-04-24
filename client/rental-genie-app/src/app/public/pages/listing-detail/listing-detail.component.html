@@ -1,15 +1,4 @@
 <div class="listing-detail-container">
-  <span>Description: {{listing.description}}</span>
-  <br>
-  <span>Bedrooms: {{listing.bedrooms}}</span>
-  <br>
-  <span>Bathrooms: {{listing.bathrooms}}</span>
-  <br>
-  <span>Size: {{listing.size}}</span>
-  <br>
-  <span>{{listing.rent_amount | currency:'EUR':'symbol':'1.0-0'}}</span>
+  <app-individual-listing [listingInfo]="listing"></app-individual-listing>
+  <app-chat-box [listingId]="listing_id"></app-chat-box>
 </div>
-<img [src]="listing.images[0]" alt="" style="width: 600px">
-{{listing.images[0]}}
-
-<app-chat-box [listingId]="listing_id"></app-chat-box>
