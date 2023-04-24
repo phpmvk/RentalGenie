@@ -1,1 +1,74 @@
-<p>individual-listing works!</p>
+<div class="individual-listing__listing-header">
+  {{listingInfo.header}}
+</div>
+
+<hr />
+
+<div class="individual-listing__picture-container b-red">
+  <img *ngFor="let image of listingInfo.images" [src]="image" alt="">
+</div>
+
+<hr />
+
+<div class="individual-listing__information-container">
+  
+  <div class="individual-listing__information-container-box individual-listing__information-container-box__left">
+    {{listingInfo.description}}
+
+    <div class="hello">
+      <i class="fa-solid fa-location-dot"></i>
+      {{listingInfo.district}},
+      {{listingInfo.city}}
+    </div>
+    <div class="bye">
+      <i class="fa-solid fa-euro-sign"></i>
+      {{listingInfo.rent_amount | number: '1.0-0'}} / month
+    </div>
+
+  </div>
+
+  <div class="individual-listing__information-container-box individual-listing__information-container-box__right">
+    <div class="individual-listing__information-container-card {{listingInfo.furnished ? '' : 'individual-listing__information-container-card__false'}}">
+      <i class="fa-solid fa-couch"></i>
+      <span>{{listingInfo.furnished ? 'Furnished' : 'Unfurnished'}}</span>
+    </div>
+    <div class="individual-listing__information-container-card {{listingInfo.pets_allowed ? '' : 'individual-listing__information-container-card__false'}}">
+      <i class="fa-solid fa-paw"></i>
+      <span>{{listingInfo.pets_allowed ? 'Allowed' : 'Not Allowed'}}</span>
+    </div>
+    <div class="individual-listing__information-container-card {{listingInfo.parking_spots < 1 ? 'individual-listing__information-container-card__false' : ''}}">
+      <i class="fa-solid fa-square-parking"></i>
+      <span>{{listingInfo.parking_spots < 1 ? 'No parking' : 
+        (listingInfo.parking_spots === 1 ? listingInfo.parking_spots + ' Spot' : listingInfo.parking_spots + ' Spots')}}</span>
+    </div>
+    <div class="individual-listing__information-container-card {{listingInfo.close_to_public_transport ? '' : 'individual-listing__information-container-card__false'}}">
+      <i class="fa-solid fa-train-subway"></i>
+      <span>{{listingInfo.close_to_public_transport ? 'Close to Public Transport' : 'Distant from Public Transport'}}</span>
+    </div>
+    <div class="individual-listing__information-container-card">
+      <i class="fa-regular fa-building"></i>
+      <span>{{listingInfo.floor === 0 ? 'Ground Floor' : 'Floor ' + listingInfo.floor }}</span>
+    </div>
+    <div class="individual-listing__information-container-card">
+      <i class="fa-solid fa-bed"></i>
+      <span>{{listingInfo.bedrooms === 0 ? 'Studio' : 
+      (listingInfo.bedrooms === 1 ? '1 Bedroom' : listingInfo.bedrooms + ' Bedrooms')}}</span>
+    </div>
+    <div class="individual-listing__information-container-card">
+      <i class="fa-solid fa-bath"></i>
+      <span>{{listingInfo.bathrooms}}{{listingInfo.bathrooms < 2 ? ' Bathroom' : ' Bathrooms'}}</span>
+    </div>
+    <div class="individual-listing__information-container-card">
+      <i class="fa-solid fa-ruler-combined"></i>
+      <span><span>{{listingInfo.size}} m&#178;</span></span>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="individual-listing__full-size-pictures-container">
+  <img *ngFor="let image of listingInfo.images" [src]="image" alt="">
+</div>
+
+<hr />

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PublicListing } from 'src/app/types';
 
 @Component({
   selector: 'app-individual-listing',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./individual-listing.component.css']
 })
 export class IndividualListingComponent {
+
+  @Input() listingInfo!: PublicListing;
 
 }

@@ -27,4 +27,9 @@ export type PublicListing = {
   city: string,
   district: string,
   header: string,
+  floor: number,
+  furnished: boolean,
+  pets_allowed: boolean,
+  parking_spots: number,
+  close_to_public_transport: boolean,
 }

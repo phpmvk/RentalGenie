@@ -15,6 +15,11 @@ const addListing = async (req, res) => {
       images: newListing.images,
       district: newListing.district,
       city: newListing.city,
+      furnished: newListing.furnished,
+      pets_allowed: newListing.pets_allowed,
+      parking_spots: newListing.parking_spots,
+      floor: newListing.floor,
+      close_to_public_transport: newListing.close_to_public_transport,
     }
     const savedPublicListing = await PublicListing.create(public)
     const private = {
