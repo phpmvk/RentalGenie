@@ -1,10 +1,11 @@
 <div class="individual-listing__listing-header">
-  {{listingInfo.header}}
+  <a class="individual-listing__listing-header-button" routerLink="/public/home"><button><i class="fa-solid fa-backward-step"></i></button></a>
+  <span class="individual-listing__listing-header-text">{{listingInfo.header}}</span>
 </div>
 
 <hr />
 
-<div class="individual-listing__picture-container b-red">
+<div class="individual-listing__picture-container">
   <img *ngFor="let image of listingInfo.images" [src]="image" alt="">
 </div>
 
@@ -15,12 +16,12 @@
   <div class="individual-listing__information-container-box individual-listing__information-container-box__left">
     {{listingInfo.description}}
 
-    <div class="hello">
+    <div>
       <i class="fa-solid fa-location-dot"></i>
       {{listingInfo.district}},
       {{listingInfo.city}}
     </div>
-    <div class="bye">
+    <div>
       <i class="fa-solid fa-euro-sign"></i>
       {{listingInfo.rent_amount | number: '1.0-0'}} / month
     </div>

@@ -1,11 +1,31 @@
+
 .individual-listing__listing-header {
   font-size: 2rem;
   font-weight: bold;
   display: flex;
-  justify-content: center;
+  /* justify-content: space-between; */
   text-align: center;
   padding: 1rem;
 }
+.individual-listing__listing-header-button > button {
+  height: 50px;
+  width: 50px;
+  align-self: flex-start;
+  background: none;
+  border: 1px double var(--border-primary);
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 0;
+  background-color: var(--bg-tertiary);
+}
+.individual-listing__listing-header-button > button:active {
+  background-color: var(--border-primary);   
+}
+.individual-listing__listing-header-text{
+  flex: 1;
+  padding-left: 10px;
+}
+
 .individual-listing__picture-container {
   box-sizing: border-box;
   display: inline-flex;
@@ -61,7 +81,7 @@
   text-align: center;
 }
 .individual-listing__information-container-card > i {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 .individual-listing__information-container-card__false {
   color: var(--text-tertiary);
