@@ -1,0 +1,9 @@
+{
+  "name": "rental-genie",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "cd client && npm i && cd ../server && npm i && cd ./client/rental-genie-app && npm i",
+    "server": "cd server && npm start",
+    "client": "cd ./client/rental-genie-app && ng serve"
+  }
+}
