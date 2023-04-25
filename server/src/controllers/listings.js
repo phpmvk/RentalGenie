@@ -66,13 +66,22 @@ const getListingById = async (req, res) => {
 
 const getAllListingsByAgencyId = async (req, res) => {
   try {
-    console.log('GET request for all listings by agency ID received')
-    const agencyId = req.params.id
-    const allAgencyListings = await PublicListing.find({ agency_id: agencyId})
-    res.status(200).json(allAgencyListings)
+    console.log('GET request for all listings by agency ID received');
+    const agencyId = req.params.id;
+    const allAgencyListings = await PrivateListing.find({ agency_id: agencyId });
+    const allPublicListings = await PublicListing.find();
+
+    const combinedListingData = allAgencyListings.map(privateInfo => {
+      const publicInfo = allPublicListings.find(el => el._id.equals(privateInfo._id));
+      return {
+        privateInfo,
+        publicInfo,
+      }
+    });
+    res.status(200).json(combinedListingData);
   } catch (e) {
-    console.error(e)
-    res.status(500).json('Error getting all listings by ID from DB!')
+    console.error(e);
+    res.status(500).json('Error getting all agency listings by ID from DB!');
   }
 }
 

@@ -34,6 +34,10 @@ export class ApiClientService {
     return this.http.post<string>(this.rootUrl + 'userMessage/' + listingId, msg, {  "headers": { "content-type": "application/json" }})
   }
 
+  getAllAgencyListingsById(id: string): Observable<any>{
+    return this.http.get<any>(this.rootUrl + 'all-listings/' + id, { "headers": {"accept": "application/json" }});
+  }
+
   // REMEMBER TO FIX TYPE FOR THIS:
   postNewListing(listing: any): Observable<any>{
     return this.http.post<any>(this.rootUrl + 'add-listing', listing, {  "headers": { "content-type": "application/json" }})
@@ -46,6 +50,4 @@ export class ApiClientService {
   getAllEvents(): Observable<[Event]>{
     return this.http.get<any>(this.rootUrl + 'agent/calendar/all', {  "headers": { "content-type": "application/json" }})
   }
-
-
 }
