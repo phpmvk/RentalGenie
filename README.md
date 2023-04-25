@@ -38,7 +38,7 @@ Front end:
 Back end:
 * [Express](https://expressjs.com/) - Backend framework for Node.js
 * [MongoDB](https://www.mongodb.com/) - Database
-* [Mongoose](https://mongoosejs.com/) - MongoDB ORM
+* [Mongoose](https://mongoosejs.com/) - MongoDB ODM
 * [OpenAI](https://platform.openai.com/overview) - API for chat service
 
 ## Contributing
