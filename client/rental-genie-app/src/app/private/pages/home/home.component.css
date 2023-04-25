@@ -6,11 +6,9 @@
   border-radius: 10px;
   background-color: rgb(229, 225, 225);
   overflow-y: scroll;
-  position: absolute;
-  top: 10px;
-  left: 70px;
-  bottom: 10px;
-  right: 10px;
+  margin: 10px;
+  max-width: 92vw;
+  min-height: 97vh;
 }
 .private-dashboard__welcome-header {
   flex: 1;
@@ -20,21 +18,32 @@
 .private-dashboard__events-and-calendar-container {
   flex: 5;
   display: flex;
-
+  margin-right: 5px;
 }
 .private-dashboard__current-events-list {
   flex: auto;
+  width: auto;
+  background-color: var(--bg-tertiary);
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 5px;
 }
 .private-dashboard__calendar-container {
   width: 450px;
-  background-color: aqua;
+  background-color: var(--bg-tertiary);
   border-radius: 10px;
+  padding: 10px;
 }
 .private-dashboard__agency-listing-container {
   flex: 5;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-top: 5px;
+  background-color: var(--bg-tertiary);
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 5px;
 }
 .private-dashboard__agency-listing-conveyor {
   display: flex;
@@ -60,51 +69,3 @@
   height: 210px;
   width: 100%;
 }
-
-
-
-/* 
-.dashboard-left-card {
-  flex: 0 0 50%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.agency-logo, .events-list {
-  flex-basis: 50%;
-  box-sizing: border-box;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
-
-.agency-logo img {
-  max-width: 320px;
-}
-
-.dashboard-calendar-and-listings-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.dashboard-right-card {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-
-/* .dashboard-listing-images {
-  box-sizing: border-box;
-  align-self: flex-end;
-  border: 2px solid purple;
-  display: flex;
-  max-width: 100%;
-  max-height: 100%;
-} */

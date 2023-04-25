@@ -1,17 +1,10 @@
-<!-- this is to be changed once you have the thumbnails implemented
-<div class="dashboard-listing-images">
-  <img [src]="image">
-  <div *ngFor="let image of imageUrls">
-  </div>
-</div> -->
-
 <div class="private-dashboard__main-container">
   
-  <span class="private-dashboard__welcome-header b-red">Welcome back [agentname]!</span>
+  <span class="private-dashboard__welcome-header">Welcome back agent Smith!</span>
   
   <div class="private-dashboard__events-and-calendar-container">
     <div class="private-dashboard__current-events-list">
-      current events
+      <app-calendar-list-view></app-calendar-list-view>
     </div>
     <app-calendar class="private-dashboard__calendar-container"></app-calendar>
   </div>
@@ -21,7 +14,6 @@
     <div class="private-dashboard__agency-listing-conveyor">
       <div *ngFor="let listing of listings" class="private-dashboard__agency-listing-conveyor-card">
         <span>{{listing.privateInfo.address}}</span>
-        <!-- <span>{{listing.publicInfo.district}}</span> -->
         <br />
         <span>{{listing.privateInfo.owner_name}}</span>
         <span>{{listing.privateInfo.owner_contact}}</span>
@@ -29,32 +21,4 @@
       </div>
     </div>
   </div>
-
 </div>
-
-
-
-
-<!-- <div class="dashboard-left-card">
-  
-  <div class="agency-logo b-red">
-    <img src="https://picsum.photos/400" alt="">
-  </div>
-  
-  <div class="events-list b-red">
-    <ul> -->
-      <!-- Mybe filter out previous events and only show NEXT events here -->
-      <!-- All Events:
-      <li *ngFor="let event of events">
-        <b>{{event.title}}</b> -->
-        <!-- <i>{{event.start}}</i> -->
-      <!-- </li>
-    </ul>
-  </div>
-</div>
-
-<div class="dashboard-right-card b-red">
-
-  <app-calendar></app-calendar>
-
-</div> -->

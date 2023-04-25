@@ -23,6 +23,7 @@
     "@fullcalendar/angular": "^6.1.5",
     "@fullcalendar/core": "^6.1.5",
     "@fullcalendar/daygrid": "^6.1.5",
+    "@fullcalendar/list": "^6.1.6",
     "@fullcalendar/timegrid": "^6.1.5",
     "@types/google-one-tap": "^1.2.2",
     "bootstrap": "^5.3.0-alpha3",
