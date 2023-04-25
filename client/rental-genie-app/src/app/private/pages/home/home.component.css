@@ -62,10 +62,9 @@
   align-items: flex-start;
   min-width: 150px;
   font-size: 0.8rem;
-  /* border: 1px solid var(--bg-primary); */
   border-radius: 5px;
 }
 .private-dashboard__agency-listing-conveyor-card > img{
-  height: 210px;
+  height: 190px;
   width: 100%;
 }

@@ -21,37 +21,24 @@ export class FullCalendarComponent implements OnInit {
 
   calendarOptions: CalendarOptions = {
     initialView: 'timeGridWeek',
+    allDaySlot: false,
     headerToolbar: {
       start: 'title',
       center: '',
       end: 'today prev,next'
-      // left: 'prev,next today',
-      // center: 'title',
-      // right: 'dayGridMonth,timeGridWeek,dayGridWeek,timeGridDay'
-      // center: 'timeGridWeek,timeGridThreeDay' // buttons for switching between views
-    },
-    views: {
-      timeGridThreeDay: {
-        type: 'timeGrid',
-        duration: { days: 3 },
-        buttonText: '3 day'
-      }
     },
     plugins: [
       dayGridPlugin,
       timeGridPlugin
     ],
     events: '',
-    // editable: true,
-    // selectMirror: true,
-    // selectable: true,
+    displayEventEnd: false,
     weekends: true,
-    // contentHeight: '80vh',
-    eventClick: function(info){
-      info.jsEvent.preventDefault();
-      prompt('hey!')
-      
-    },
+    businessHours: {
+      daysOfWeek: [1,2,3,4,5],
+      startTime: '08:00',
+      endTime: '18:00'
+    }
   };
 
 

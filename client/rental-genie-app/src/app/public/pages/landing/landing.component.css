@@ -25,4 +25,5 @@ button {
   background-color: blue;
   color: var(--text-primary);
   height: 40px;
+  cursor: pointer;
 }

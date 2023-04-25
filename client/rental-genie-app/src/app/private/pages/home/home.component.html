@@ -1,7 +1,7 @@
 <div class="private-dashboard__main-container">
   
   <span class="private-dashboard__welcome-header">Welcome back agent Smith!</span>
-  
+  <br>
   <div class="private-dashboard__events-and-calendar-container">
     <div class="private-dashboard__current-events-list">
       <app-calendar-list-view></app-calendar-list-view>
@@ -11,6 +11,7 @@
 
   <div class="private-dashboard__agency-listing-container">
     <span>Your Listings Overview</span>
+    <br>
     <div class="private-dashboard__agency-listing-conveyor">
       <div *ngFor="let listing of listings" class="private-dashboard__agency-listing-conveyor-card">
         <span>{{listing.privateInfo.address}}</span>
