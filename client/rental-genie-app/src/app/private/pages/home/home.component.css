@@ -1,13 +1,71 @@
-.dashboard-container {
+.private-dashboard__main-container {
+  box-sizing: border-box;
+  padding: 10px;
   display: flex;
-  padding: 0;
-  margin: 0;
-  height: 100%;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: rgb(229, 225, 225);
+  overflow-y: scroll;
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  bottom: 10px;
+  right: 10px;
+}
+.private-dashboard__welcome-header {
+  flex: 1;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.private-dashboard__events-and-calendar-container {
+  flex: 5;
+  display: flex;
+
+}
+.private-dashboard__current-events-list {
+  flex: auto;
+}
+.private-dashboard__calendar-container {
+  width: 450px;
+  background-color: aqua;
   border-radius: 10px;
 }
+.private-dashboard__agency-listing-container {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.private-dashboard__agency-listing-conveyor {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.private-dashboard__agency-listing-container > span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.private-dashboard__agency-listing-conveyor-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-width: 150px;
+  font-size: 0.8rem;
+  /* border: 1px solid var(--bg-primary); */
+  border-radius: 5px;
+}
+.private-dashboard__agency-listing-conveyor-card > img{
+  height: 210px;
+  width: 100%;
+}
 
+
+
+/* 
 .dashboard-left-card {
-  flex: 0 0 40%;
+  flex: 0 0 50%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

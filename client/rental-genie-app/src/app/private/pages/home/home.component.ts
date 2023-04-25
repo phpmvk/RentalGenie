@@ -15,12 +15,7 @@ export class HomeComponent implements OnInit {
 
   listings: any[] = [];
 
-  imageUrls = [
-    'https://picsum.photos/200',
-    'https://picsum.photos/200',
-    'https://picsum.photos/200',
-    'https://picsum.photos/200',
-  ]
+  agencyId: string = '111';
 
   constructor(
     private api: ApiClientService,
@@ -31,6 +26,7 @@ export class HomeComponent implements OnInit {
     //used setTimeout so that home component would not make simultaneous API request along with calendar component before anything is stored in private store
     setTimeout(() => {
       this.getAllEvents();
+      this.getAllListings();
     }, 200)
   }
   
@@ -48,12 +44,18 @@ export class HomeComponent implements OnInit {
     };
   };
   
-  // getAllListings(){
-  //   const privateStoreListings = this.pStore.getPrivateListings();
-  //   if (privateStoreListings.length > 0) {
-  //     this.listings = privateStoreListings
-  //   } else {
-  //     console.log('you need to set up the API request to get all agent listings')
-  //   }
-  // }
+  getAllListings(){
+    const privateStoreListings = this.pStore.getPrivateListings();
+    if (privateStoreListings.length > 0) {
+      console.log('ALL listings GOT through PRIVATE STORE')
+      this.listings = privateStoreListings
+    } else {
+      console.log('ALL listings GOT through API')
+      this.api.getAllAgencyListingsById(this.agencyId).subscribe(res => {
+        console.log(res);
+        this.pStore.setPrivateListings(res);
+        this.listings = res;
+      })
+    }
+  }
 }
