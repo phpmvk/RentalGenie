@@ -1,0 +1,28 @@
+.agency-listings-page__main-container {
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: rgb(229, 225, 225);
+  overflow-y: scroll;
+  margin: 10px;
+  max-width: 92vw;
+  min-width: 92vw;
+  min-height: 97vh;
+  max-height: 97vh;
+  gap: 10px;
+  /* justify-content: space-around; */
+  overflow-y: scroll;
+}
+
+.agency-listings-page__listing-card-item {
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  /* flex-direction: column; */
+  border-radius: 10px;
+  background-color: var(--bg-tertiary);
+  box-shadow: -2px 2px 2px grey;
+  min-height: 170px;
+}

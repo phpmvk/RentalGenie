@@ -1,1 +1,3 @@
-<p>PRIVATE mylistings works!</p>
+<div class="agency-listings-page__main-container">
+  <app-listing-card *ngFor="let listing of listings" [thisListing]="listing" class="agency-listings-page__listing-card-item"></app-listing-card>
+</div>

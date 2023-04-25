@@ -1,0 +1,38 @@
+<div class="listing-card__left-container">
+  <span><b>{{thisListing.privateInfo.address}}</b></span>
+  <span>{{thisListing.publicInfo.district}}</span>
+  <span>{{thisListing.publicInfo.city}}</span>
+  <br>
+  <span>{{thisListing.privateInfo.owner_name}}</span>
+  <span>{{thisListing.privateInfo.owner_contact}}</span>
+</div>
+
+
+<div class="listing-card__center-container">
+  <div class="listing-card__center-container-upper-half">
+    <div class="listing-card__center-container-upper-half__left">
+      <span><i>Bedrooms:</i> {{thisListing.publicInfo.bedrooms}}</span>
+      <span><i>Bathrooms:</i> {{thisListing.publicInfo.bathrooms}}</span>
+      <span><i>Floor:</i> {{thisListing.publicInfo.floor}}</span>
+      <span><i>Size:</i> {{thisListing.publicInfo.size}}m&#178;</span>
+      <span><i>Rent:</i> {{thisListing.publicInfo.rent_amount | currency:'EUR':'symbol':'1.0-0'}}</span>
+    </div>
+    <div class="listing-card__center-container-upper-half__right">
+      <span><i>Furnished:</i> {{thisListing.publicInfo.furnished ? 'Yes': 'No'}}</span>
+      <span><i>Parking spots:</i> {{thisListing.publicInfo.parking_spots}}</span>
+      <span><i>Pet Policy:</i> {{thisListing.publicInfo.pets_allowed ? 'Allowed' : 'Not allowed'}}</span>
+      <span><i>Transport nearby:</i> {{thisListing.publicInfo.close_to_public_transport ? 'Yes': 'No'}}</span>
+    </div>
+
+  </div>
+
+  <div class="listing-card__center-container-upper-half">
+    <span><u>Tenant Requirements</u>: {{thisListing.privateInfo.tenant_requirements}}</span>
+  </div>
+</div>
+
+<div class="listing-card__right-container">
+  <span><b>Showing Schedule:</b></span>
+  <span *ngFor="let day of thisListing.privateInfo.showing_weekdays">&#x2022; {{day}}</span>
+  <span>&#x2022; Hours: {{thisListing.privateInfo.showing_hours}}</span>
+</div>

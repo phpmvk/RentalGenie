@@ -1,0 +1,29 @@
+.listing-card__left-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+
+}
+.listing-card__center-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.listing-card__center-container-upper-half {
+  display: flex;
+}
+
+.listing-card__center-container-upper-half__left,
+.listing-card__center-container-upper-half__right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.listing-card__right-container {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+
+}
