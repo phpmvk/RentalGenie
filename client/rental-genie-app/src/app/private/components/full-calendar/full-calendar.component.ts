@@ -20,7 +20,7 @@ export class FullCalendarComponent implements OnInit {
   }
 
   calendarOptions: CalendarOptions = {
-    initialView: 'dayGridWeek',
+    initialView: 'timeGridWeek',
     headerToolbar: {
       start: 'title',
       center: '',

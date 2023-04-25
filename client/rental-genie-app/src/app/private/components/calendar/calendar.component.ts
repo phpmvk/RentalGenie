@@ -45,18 +45,28 @@ export class CalendarComponent implements OnInit {
       timeGridTwoDay: {
         type: 'timeGrid',
         duration: { days: 2 },
-        buttonText: '2 day'
-      }
+        buttonText: '2 day',
+        allDaySlot: false,
+      },
+    },
+    headerToolbar: {
+      start: '',
+      center: '',
+      end: 'today prev next'
     },
     plugins: [
       dayGridPlugin,
       timeGridPlugin
     ],
     events: '',
-    // editable: true,
-    // selectMirror: true,
-    // selectable: true,
     weekends: true,
+    defaultRangeSeparator: ' - ',
+    eventTimeFormat: {
+      hour: 'numeric',
+      minute: '2-digit',
+      meridiem: false,
+    },
+    displayEventEnd: false,
   };
 
 }

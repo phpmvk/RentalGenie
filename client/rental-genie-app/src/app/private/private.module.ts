@@ -12,6 +12,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 import { FullCalendarComponent } from './components/full-calendar/full-calendar.component';
 import { SharedModule } from '../shared/shared.module';
+import { CalendarListViewComponent } from './components/calendar-list-view/calendar-list-view.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SharedModule } from '../shared/shared.module';
     CalendarComponent,
     CalendarPageComponent,
     FullCalendarComponent,
+    CalendarListViewComponent,
   ],
   imports: [
     CommonModule,
