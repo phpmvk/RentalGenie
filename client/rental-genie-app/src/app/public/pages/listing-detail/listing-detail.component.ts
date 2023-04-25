@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from 'src/app/client-store';
 import { ActivatedRoute } from '@angular/router';
 import { ApiClientService } from 'src/app/api-client.service';
@@ -36,7 +36,7 @@ export class ListingDetailComponent implements OnInit {
     this.listing_id = this.activatedRoute.snapshot.paramMap.get("id");
   }
 
-  findListing(id: any){
+  findListing(id: string){
     const result = this.store.getListingById(id);
     this.listing = result;
   }

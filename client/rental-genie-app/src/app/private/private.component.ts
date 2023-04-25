@@ -3,7 +3,12 @@ import { NavLink } from '../../app/shared/components/navigation-bar/navigation-b
 
 @Component({
   selector: 'app-private',
-  templateUrl: './private.component.html',
+  template: `
+    <app-navigation-bar [navLinks]="privateNavLinks"></app-navigation-bar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  `,
   styles: [
     `
       :host {

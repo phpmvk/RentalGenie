@@ -1,13 +1,12 @@
 import { Injectable } from "@angular/core";
+import { PublicListing } from "./types";
 
 @Injectable({
   providedIn: 'root'
 })
 export class Store {
 
-  private allListings: any[] = []
-
-  constructor(){}
+  private allListings: PublicListing[] = []
 
   getListing(){
     return this.allListings

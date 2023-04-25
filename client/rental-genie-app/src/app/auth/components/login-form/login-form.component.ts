@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -20,8 +20,8 @@ export class LoginFormComponent{
   }
 
   onSubmit() {
-    console.log(this.loginForm.value)
-    const userInput = this.loginForm.value;
+    // console.log(this.loginForm.value)
+    // const userInput = this.loginForm.value;
     this.loginForm.reset();
   }
-};
+}

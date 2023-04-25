@@ -2,15 +2,27 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import { Event } from 'src/app/types';
 
 @Component({
   selector: 'app-full-calendar',
-  templateUrl: './full-calendar.component.html',
-  styleUrls: ['./full-calendar.component.css']
+  template: `
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  `,
+  styles: [
+    `
+    full-calendar {
+      border-radius: 10px;
+      padding: 10px;
+      height: 95vh;
+      background-color: var(--bg-tertiary);
+    }
+    `
+  ]
 })
 export class FullCalendarComponent implements OnInit {
 
-  @Input() currentEvents: any[] = [];
+  @Input() currentEvents: Event[] = [];
 
   ngOnInit(): void {
     //not sure if this is the best approach to this, but I am still running into rendering time issues with calendar not having the events from storage

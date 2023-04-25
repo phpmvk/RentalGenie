@@ -11,7 +11,7 @@ export class MylistingsComponent implements OnInit {
 
   listings: any[] = [];
 
-  agencyId: string = '111';
+  agencyId = '111';
 
   constructor(
     private pStore: PrivateStore,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router'
 import { ApiClientService } from 'src/app/api-client.service';
 import { PrivateStore } from 'src/app/private-store';
 import { Event } from 'src/app/types';
@@ -15,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   listings: any[] = [];
 
-  agencyId: string = '111';
+  agencyId = '111';
 
   constructor(
     private api: ApiClientService,
@@ -41,8 +40,8 @@ export class HomeComponent implements OnInit {
         this.pStore.setPrivateEvents(res);
         this.events = res;
       });
-    };
-  };
+    }
+  }
   
   getAllListings(){
     const privateStoreListings = this.pStore.getPrivateListings();

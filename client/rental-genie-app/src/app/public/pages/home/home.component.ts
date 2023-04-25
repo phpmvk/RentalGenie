@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit{
   allCities: string[] = [];
   allDistricts: string[] = [];
 
-  priceSortedByAscending: Boolean = false;
+  priceSortedByAscending = false;
 
   constructor(
     private api: ApiClientService,
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit{
       this.api.getAllListings().subscribe(res => {
         this.store.setListings(res)
         this.allListings = res;
-        for (let listing of this.allListings) {
+        for (const listing of this.allListings) {
           if (!this.allCities.includes(listing.city)) {
             this.allCities.push(listing.city)
           }

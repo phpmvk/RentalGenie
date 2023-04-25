@@ -67,7 +67,7 @@ export class AddListingFormComponent implements OnInit {
     const newListing = this.addListingForm.value
     const showingDays = this.addListingForm.value.showing_weekdays
     const showingDaysArray = []
-    for (let day in showingDays) {
+    for (const day in showingDays) {
       if (showingDays[day] === true) showingDaysArray.push(day)
     }
     newListing.showing_weekdays = showingDaysArray
@@ -110,10 +110,10 @@ export class AddListingFormComponent implements OnInit {
     const imagesRef = ref(this.storage, `images/${this.formSubmissionFolder}`);
     listAll(imagesRef).then(async res => {
       this.images = [];
-      for(let image of res.items) {
+      for(const image of res.items) {
         const url = await getDownloadURL(image)
         this.images.push(url)
       }
     }).catch(err => console.error(err))
-  };
+  }
 }

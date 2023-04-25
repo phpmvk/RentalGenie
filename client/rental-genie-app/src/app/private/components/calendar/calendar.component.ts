@@ -8,8 +8,17 @@ import { Event } from 'src/app/types';
 
 @Component({
   selector: 'app-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  template: `
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  `,
+  styles: [
+    `
+      full-calendar {
+        width: 400px;
+        height: 100%;
+      }
+    `
+  ]
 })
 export class CalendarComponent implements OnInit {
   currentEvents!: Event[]
@@ -36,7 +45,7 @@ export class CalendarComponent implements OnInit {
         this.currentEvents = res;
         this.calendarOptions.events = res;
       });
-    };
+    }
   }
   
   calendarOptions: CalendarOptions = {

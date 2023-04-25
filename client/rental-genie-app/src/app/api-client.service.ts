@@ -47,7 +47,7 @@ export class ApiClientService {
     return this.http.post<any>(this.rootUrl + 'agent/login', {userCredentials}, {  "headers": { "content-type": "application/json" }})
   }
 
-  getAllEvents(): Observable<[Event]>{
-    return this.http.get<any>(this.rootUrl + 'agent/calendar/all', {  "headers": { "content-type": "application/json" }})
+  getAllEvents(): Observable<Event[]>{
+    return this.http.get<Event[]>(this.rootUrl + 'agent/calendar/all', {  "headers": { "content-type": "application/json" }})
   }
 }

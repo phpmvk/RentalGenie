@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
-import { AddListingFormComponent } from '../../components/add-listing-form/add-listing-form.component';
-
-
 
 @Component({
   selector: 'app-add-listing',
-  templateUrl: './add-listing.component.html',
-  styleUrls: ['./add-listing.component.css'],
+  template: `
+    <div class="form-container">
+      <app-add-listing-form></app-add-listing-form>
+    </div>
+  `,
+  styles: [`
+    .form-container {
+      margin: 10px;
+      padding: 10px;
+      background-color: rgb(246, 244, 244);
+      border-radius: 10px;
+      min-width: 80vw;
+      display: flex;
+      justify-content: center;
+    }
+  `],
 })
 export class AddListingComponent {
 
