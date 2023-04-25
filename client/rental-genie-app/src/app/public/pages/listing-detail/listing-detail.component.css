@@ -8,4 +8,5 @@
   flex-direction: column;
   height: 97%;
   overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }

@@ -69,7 +69,9 @@
 <hr />
 
 <div class="individual-listing__full-size-pictures-container">
-  <img *ngFor="let image of listingInfo.images" [src]="image" alt="">
+  <div *ngFor="let image of listingInfo.images" class="individual-listing__picture-frame">
+    <img [src]="image" alt="">
+  </div>
 </div>
 
 <hr />
