@@ -6,13 +6,21 @@ To set up and run the client component of RentalGenie in development, follow the
 
 1. Navigate to the client directory:
   ```console
-  cd RentalGenie/client/rental-genie-app
+  cd /client/rental-genie-app
   ```
 
 2. Install npm packages:
   ```console
   npm install
   ```
+
+3. Create a [Firebase](https://firebase.google.com/) project, with Firebase Storage, and add the configurations.
+
+- Copy the example environment file
+ ```console
+  cd src/environments && cp environment.example.ts environment.ts && cd ...
+  ```
+- Insert your config data into *'environment.ts'*
 
 3. Start the client:
   ```console
