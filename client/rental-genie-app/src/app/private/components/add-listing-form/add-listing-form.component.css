@@ -42,3 +42,13 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.form-group-checkbox {
+  display: flex;
+  font-weight: bold;
+  gap: 20px;
+}
+.form-group-upload {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}

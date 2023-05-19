@@ -54,7 +54,12 @@ export class CalendarListViewComponent {
       minute: '2-digit',
       meridiem: true,
     },
-    displayEventEnd: false
+    displayEventEnd: false,
+    headerToolbar: {
+      start: 'title',
+      center: '',
+      end: 'today prev next'
+    },
   };
 
 }

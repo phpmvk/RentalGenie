@@ -67,20 +67,37 @@
 
     </div>
     <div class="form-group">
-      <label>Included Parking Spots:</label>
+      <label>Parking Spots:</label>
       <input type="number" formControlName="parking_spots">
 
     </div>
 
-    <div class="form-group">
+    <div>
+      <span class="form-group-checkbox">
+        <input id="furnished" type="checkbox" formControlName="furnished">
+        <label for="furnished">Furnished?</label>
+      </span>
+      
+      <span class="form-group-checkbox">
+        <input id="pets-policy" type="checkbox" formControlName="pets_allowed">
+        <label for="pets-policy">Pets allowed?</label>
+      </span>
 
-      <label>Rent Amount <i>(€)</i>:</label>
-      <input type="number" formControlName="rent_amount">
+      <span class="form-group-checkbox">
+        <input id="public-transport" type="checkbox" formControlName="close_to_public_transport">
+        <label for="public-transport">Within 500m of public transport?</label>
+      </span>
+
     </div>
 
   </div>
 
   <div class="add-listing-form__input-area add-listing-form__input-area-right">
+    <div class="form-group">
+      <label>Rent Amount <i>(€)</i>:</label>
+      <input type="number" formControlName="rent_amount">
+    </div>
+    
     <div class="form-group">
       <label>Listing Header:</label>
       <input type="text" formControlName="header">
@@ -98,43 +115,29 @@
       <textarea formControlName="tenant_requirements"></textarea>
       
     </div>
-  
-    <div class="form-group">
-      <label>Furnished?</label>
-      <input type="checkbox" formControlName="furnished">
-      
-    </div>
-    <div class="form-group">
-      <label>Pets allowed?</label>
-      <input type="checkbox" formControlName="pets_allowed">
-      
-    </div>
-    <div class="form-group">
-      <label>Within 500m of public transport?</label>
-      <input type="checkbox" formControlName="close_to_public_transport">
-      
-    </div>
-  
     
-    <div class="form-group">
+    <div class="form-group-upload">
       <label for="image">Upload Listing Images:</label>
       <input type="file" id="image" formControlName="image" (change)="imageUpload($event)" multiple>
       
     </div>
   
-    <label>Showing Availability:</label>
-    <div class="availability-selector">
-      <!-- <label>Showing Weekdays:</label> -->
-      <div formGroupName="showing_weekdays">
-        <div *ngFor="let day of weekdays">
-          <label>{{ day }}</label>
-          <input type="checkbox" [formControlName]="day">
+    <div>
+      <label><b>Showing Availability:</b></label>
+      <div class="availability-selector">
+        <!-- <label>Showing Weekdays:</label> -->
+        <div formGroupName="showing_weekdays">
+          <div *ngFor="let day of weekdays">
+            <input type="checkbox" [formControlName]="day">
+            <label>{{ day }}</label>
+          </div>
         </div>
-      </div>
-      <div>
+  
         <label>Showing Hours:</label>
         <input type="text" formControlName="showing_hours">
+  
       </div>
+
     </div>
 
     <button type="submit" [disabled]="!addListingForm.valid">Submit</button>

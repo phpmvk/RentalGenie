@@ -23,6 +23,6 @@
   /* flex-direction: column; */
   border-radius: 10px;
   background-color: var(--bg-tertiary);
-  box-shadow: -2px 2px 2px grey;
+  box-shadow: -1px 1px 2px rgb(187, 185, 185);
   min-height: 170px;
 }

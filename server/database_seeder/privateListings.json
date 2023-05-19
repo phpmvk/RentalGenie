@@ -1,0 +1,262 @@
+[
+  {
+    "_id": "6443da9320dc6ec1beaa67a8",
+    "address": "Carrer de la Marina, 123",
+    "post_code": "08018",
+    "owner_name": "Maria Rodriguez",
+    "owner_contact": "+34 912 345 678",
+    "tenant_requirements": "Must have local, long term work contract. Only short-term rentals allowed.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday"
+    ],
+    "showing_hours": "9:00-15:00",
+    "__v": 0
+  },
+  {
+    "_id": "6443db3220dc6ec1beaa67ab",
+    "address": "Carrer de Mallorca, 456",
+    "post_code": "08013",
+    "owner_name": "Jordi Martinez",
+    "owner_contact": " +34 911 234 567",
+    "tenant_requirements": "Only long term contracts allowed. Tenant must be employed locally. Minimum annual gross income of 30,000.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Wednesday"
+    ],
+    "showing_hours": "10:00-12:00",
+    "__v": 0
+  },
+  {
+    "_id": "6443db7e20dc6ec1beaa67ae",
+    "address": "Carrer de la Creu Coberta, 789",
+    "post_code": "08014",
+    "owner_name": "Ana Gomez",
+    "owner_contact": "+34 910 987 654",
+    "tenant_requirements": "No flat-sharing allowed. Minimum contract length of 3 years.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "showing_hours": "9:00-15:00",
+    "__v": 0
+  },
+  {
+    "_id": "6443dbdb20dc6ec1beaa67b1",
+    "address": "Carrer de Balmes, 345",
+    "post_code": "08006",
+    "owner_name": "David Fernandez",
+    "owner_contact": "+34 912 345 678",
+    "tenant_requirements": "Minimum gross annual income of 40,000. No students accepted.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday"
+    ],
+    "showing_hours": "9:00-18:00",
+    "__v": 0
+  },
+  {
+    "_id": "6443dc4b20dc6ec1beaa67b4",
+    "address": "Carrer de Pau Claris, 234",
+    "post_code": "08037",
+    "owner_name": "Laura Garcia",
+    "owner_contact": "+34 911 234 567",
+    "tenant_requirements": "Only students permitted. Security deposit is 3 months.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Wednesday",
+      "Friday"
+    ],
+    "showing_hours": "9am-3pm",
+    "__v": 0
+  },
+  {
+    "_id": "6443dcc620dc6ec1beaa67b7",
+    "address": "Carrer de Pujades, 678",
+    "post_code": "08005",
+    "owner_name": "Juan Gomez",
+    "owner_contact": "+34 910 987 654",
+    "tenant_requirements": "No smokers allowed. Students not allowed. Must be employed by Spanish company.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "showing_hours": "9am-10am, 12pm-15pm",
+    "__v": 0
+  },
+  {
+    "_id": "6443dd1320dc6ec1beaa67ba",
+    "address": "Carrer del Passeig, 123",
+    "post_code": "08006",
+    "owner_name": "Ana Fernandez",
+    "owner_contact": "+34 912 345 678",
+    "tenant_requirements": "Minimum gross yearly income of 60,000. Only couples allowed. No children.",
+    "agency_id": "222",
+    "showing_weekdays": [
+      "Monday",
+      "Tuesday",
+      "Thursday"
+    ],
+    "showing_hours": "9am-12pm",
+    "__v": 0
+  },
+  {
+    "_id": "6443dd5d20dc6ec1beaa67bd",
+    "address": "Carrer de Gran de Gracia, 456",
+    "post_code": "08012",
+    "owner_name": "Luis Martinez",
+    "owner_contact": "+34 911 234 567",
+    "tenant_requirements": "Preferably only women. 2 months of rent to be paid upfront as security deposit.",
+    "agency_id": "222",
+    "showing_weekdays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday"
+    ],
+    "showing_hours": "12pm-6pm",
+    "__v": 0
+  },
+  {
+    "_id": "6443dd9a20dc6ec1beaa67c0",
+    "address": "Carrer de Pau Claris, 789",
+    "post_code": "08037",
+    "owner_name": "Carmen Perez",
+    "owner_contact": "+34 910 987 654",
+    "tenant_requirements": "No students. Annual gross income of $20,000 or more.",
+    "agency_id": "222",
+    "showing_weekdays": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "showing_hours": "3pm-6pm",
+    "__v": 0
+  },
+  {
+    "_id": "6443dde120dc6ec1beaa67c3",
+    "address": "Carrer de Mallorca, 345",
+    "post_code": "08013",
+    "owner_name": "Sofia Rodriguez",
+    "owner_contact": "+34 912 345 678",
+    "tenant_requirements": "Only couples allowed, no pets please. ",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "showing_hours": "9am-6pm",
+    "__v": 0
+  },
+  {
+    "_id": "6446a4f957624a817b407449",
+    "address": "Carrer de Avila, 29",
+    "post_code": "08024",
+    "owner_name": "Codeworks",
+    "owner_contact": "codeworks@gmail.com",
+    "tenant_requirements": "Gross annual income over 40,000. No students allowed. Apartment sharing is not permitted.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "showing_hours": "8am-10am, 12pm-16pm",
+    "__v": 0
+  },
+  {
+    "_id": "6447fa74efe83da864910163",
+    "address": "Carrer de Provença, 87",
+    "post_code": "08029",
+    "owner_name": "Josep Martínez",
+    "owner_contact": "+34 678 912 345",
+    "tenant_requirements": "Must provide proof of income and pass a credit check. No smoking allowed.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Thursday",
+      "Friday"
+    ],
+    "showing_hours": "9:00-13:00",
+    "__v": 0
+  },
+  {
+    "_id": "6447faf9efe83da864910166",
+    "address": "Plaça d'Espanya, 10",
+    "post_code": "08014",
+    "owner_name": "Laura García",
+    "owner_contact": "+34 612 345 678",
+    "tenant_requirements": "Must provide references from previous landlords. No parties allowed",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "showing_hours": "10:00-16:00",
+    "__v": 0
+  },
+  {
+    "_id": "6447fe56e0cdf2d4085c5c81",
+    "address": "Calle de Fuencarral, 75",
+    "post_code": "28004",
+    "owner_name": "María Sanchez",
+    "owner_contact": "+34 678 567 890",
+    "tenant_requirements": "Must provide proof of gross annual income over 40,000. No pets allowed.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Tuesday",
+      "Thursday",
+      "Friday"
+    ],
+    "showing_hours": "12:00-18:00",
+    "__v": 0
+  },
+  {
+    "_id": "6447fed6e0cdf2d4085c5c88",
+    "address": "Avenida de la Constitución, 22",
+    "post_code": "41004",
+    "owner_name": "Juan Martínez",
+    "owner_contact": "+34 612 789 123",
+    "tenant_requirements": "Must provide references from previous landlords. No smoking allowed.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "showing_hours": "9:00-14:00",
+    "__v": 0
+  },
+  {
+    "_id": "6447ff6f3b7f4532e33f1906",
+    "address": "Rua da Boavista, 100",
+    "post_code": "4050-110",
+    "owner_name": "Pedro Silva",
+    "owner_contact": "+351 912 345 678",
+    "tenant_requirements": "2-months security deposit. No students allowed. No smoking allowed.",
+    "agency_id": "111",
+    "showing_weekdays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "showing_hours": "13:00-18:00",
+    "__v": 0
+  }
+]

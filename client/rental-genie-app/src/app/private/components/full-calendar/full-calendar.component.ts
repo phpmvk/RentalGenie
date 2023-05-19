@@ -37,7 +37,7 @@ export class FullCalendarComponent implements OnInit {
     headerToolbar: {
       start: 'title',
       center: '',
-      end: 'today prev,next'
+      end: 'today prev next'
     },
     plugins: [
       dayGridPlugin,
